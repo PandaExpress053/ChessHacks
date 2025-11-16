@@ -14,7 +14,7 @@ import torch
 # ============================================================
 
 # Relative path: src/main.py → src/model_save/best.pt
-MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/model_save/best.pt")
+MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/model_save/best_selfplay.pt")
 
 NUM_PLANES = 18
 NUM_PROMOS = 5   # [None, Q, R, B, N]
@@ -24,12 +24,12 @@ CP_SCALE = 200.0  # must match training
 MATE_SCORE = 100000.0  # used for checkmate scores
 
 # --- SEARCH TUNABLES (speed/strength knobs) ---
-MAX_SEARCH_DEPTH = 8            # 1 = eval every legal move once, 2 = light lookahead
-ROOT_TOP_K = 10                 # only these many moves get full-depth search (None = all)
-TIME_LIMIT_SECONDS = 0.18       # per-move soft limit; set to None to disable
-CP_SOFTMAX_TEMPERATURE = 400.0  # for converting search scores to probs
-USE_POLICY_ROOT_ORDERING = True # use NN policy to order root moves
-BONUS_CAPTURE_ORDERING = False  # simple capture-first ordering inside search
+MAX_SEARCH_DEPTH = 8             # 1 = eval every legal move once, 2 = light lookahead
+ROOT_TOP_K = 10                   # only these many moves get full-depth search (None = all)
+TIME_LIMIT_SECONDS = 0.2        # per-move soft limit; set to None to disable
+CP_SOFTMAX_TEMPERATURE = 400.0   # for converting search scores to probs
+USE_POLICY_ROOT_ORDERING = True  # use NN policy to order root moves
+BONUS_CAPTURE_ORDERING = False    # simple capture-first ordering inside search
 
 ENGINE = None  # will be set if NN loads
 
@@ -105,7 +105,7 @@ def move_to_index(move: chess.Move) -> int:
 
 
 # ============================================================
-# NN engine with policy + cp eval + NEGAMAX search (optimized)
+# NN engine with policy + cp eval + NEGAMAX search (patched)
 # ============================================================
 
 try:
@@ -125,9 +125,8 @@ class PolicyOnlyEngine:
       - Eval & policy caching
       - Optional per-move time limit
 
-    NOTES:
-      * MAX_SEARCH_DEPTH = 1 → "eval every legal move once" behavior.
-      * ROOT_TOP_K controls how many moves get full-depth search.
+    IMPORTANT CHANGE:
+      Evaluation is now always from *side-to-move* POV for negamax correctness.
     """
 
     def __init__(self):
@@ -157,9 +156,8 @@ class PolicyOnlyEngine:
         self.model.load_state_dict(state, strict=False)
         self.model.eval()
 
-
         # Simple transposition/eval caches
-        self.eval_cache = {}    # (zkey, root_color) -> eval
+        self.eval_cache = {}    # (zkey, side_to_move) -> eval
         self.policy_cache = {}  # zkey -> logits
         self.search_deadline = None
 
@@ -222,44 +220,36 @@ class PolicyOnlyEngine:
         return cp_eval
 
     # -------------------------------
-    # Evaluation & negamax
+    # Evaluation & negamax (patched)
     # -------------------------------
 
-    def _evaluate_terminal(self, board: chess.Board, root_color: bool) -> float:
+    def _evaluate_terminal_stm(self, board: chess.Board) -> float:
         """
-        Evaluation for terminal nodes (game over).
-        Positive is good for root_color.
+        Evaluation for terminal nodes (game over), from *side to move* POV.
+        Positive is good for the side to move.
         """
         outcome = board.outcome()
         if outcome is None:
-            # Should not happen if is_game_over() is True, but be safe
             return 0.0
 
         if outcome.winner is None:
             # draw
             return 0.0
 
-        if outcome.winner == root_color:
-            return MATE_SCORE
-        else:
-            return -MATE_SCORE
+        # If winner is the side to move, that's +MATE; otherwise -MATE.
+        return MATE_SCORE if outcome.winner == board.turn else -MATE_SCORE
 
-    def _evaluate_root_pov(self, board: chess.Board, root_color: bool) -> float:
+    def _evaluate_stm(self, board: chess.Board) -> float:
         """
         Static evaluation function used at leaves.
-        Returns a score from root_color's POV.
+        Returns a score from the *side to move* POV.
         """
         if board.is_game_over():
-            return self._evaluate_terminal(board, root_color)
+            return self._evaluate_terminal_stm(board)
 
-        # NN cp eval is from side-to-move POV
+        # NN cp eval is already from side-to-move POV
         cp_stm = self._nn_eval_cp_stm(board)
-
-        # Convert to root_color POV
-        if board.turn == root_color:
-            return cp_stm
-        else:
-            return -cp_stm
+        return cp_stm
 
     def _time_exceeded(self) -> bool:
         if TIME_LIMIT_SECONDS is None:
@@ -269,25 +259,25 @@ class PolicyOnlyEngine:
         return time.time() > self.search_deadline
 
     def _negamax(self, board: chess.Board, depth: int,
-                 alpha: float, beta: float, root_color: bool) -> float:
+                 alpha: float, beta: float) -> float:
         """
         Negamax + alpha–beta pruning.
-        Score is always from root_color's POV.
+        Score is always from *side-to-move's* POV at this node.
         """
 
         # Check soft time limit
         if self._time_exceeded():
             # Return a static eval so search can bail out gracefully
-            return self._evaluate_root_pov(board, root_color)
+            return self._evaluate_stm(board)
 
         # Leaf or terminal
         if depth == 0 or board.is_game_over():
-            return self._evaluate_root_pov(board, root_color)
+            return self._evaluate_stm(board)
 
         legal_moves = list(board.legal_moves)
         if not legal_moves:
             # No moves – treat as terminal
-            return self._evaluate_root_pov(board, root_color)
+            return self._evaluate_stm(board)
 
         # Very cheap move ordering inside the tree
         if BONUS_CAPTURE_ORDERING:
@@ -304,7 +294,6 @@ class PolicyOnlyEngine:
                 depth=depth - 1,
                 alpha=-beta,
                 beta=-alpha,
-                root_color=root_color,
             )
             board.pop()
 
@@ -335,7 +324,7 @@ class PolicyOnlyEngine:
         if not legal_moves:
             return None, {}
 
-        root_color = board.turn
+        root_color = board.turn  # kept for potential logging/debug
 
         # Start per-move timer
         if TIME_LIMIT_SECONDS is not None:
@@ -385,7 +374,6 @@ class PolicyOnlyEngine:
                 depth=max_depth - 1,
                 alpha=-float("inf"),
                 beta=float("inf"),
-                root_color=root_color,
             )
             board.pop()
 
@@ -408,7 +396,6 @@ class PolicyOnlyEngine:
                     depth=0,
                     alpha=-float("inf"),
                     beta=float("inf"),
-                    root_color=root_color,
                 )
                 board.pop()
 

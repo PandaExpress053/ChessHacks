@@ -31,10 +31,10 @@ from model import ResNet20_PolicyDelta   # <--- UNIFIED MODEL
 
 class Config:
     DATASET_FOLDER = Path(
-        r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\my-chesshacks-bot\processed"
+        r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\processed"
     )
     OUTPUT_DIR = Path(
-        r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\my-chesshacks-bot\src\model_save"
+        r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\src\model_save"
     )
 
     EPOCHS = 10
@@ -336,7 +336,7 @@ def run_epoch(model, loader, optimizer, device, epoch, train=True):
 
 
 # ======================================================================
-# MAIN
+# MAIN (with auto-resume from latest checkpoint)
 # ======================================================================
 
 def main():
@@ -366,7 +366,6 @@ def main():
     print("TRAINER — Using in_planes:", ds.X.shape[1])
 
     optimizer = optim.Adam(model.parameters(), lr=cfg.LR)
-
     scheduler = optim.lr_scheduler.CosineAnnealingLR(
         optimizer, T_max=cfg.EPOCHS, eta_min=cfg.LR * 0.1
     )
@@ -375,8 +374,38 @@ def main():
     out.mkdir(exist_ok=True, parents=True)
 
     best = float("inf")
+    start_epoch = 1
 
-    for epoch in range(1, cfg.EPOCHS + 1):
+    # --------------------------------------------------------------
+    # AUTO-RESUME FROM LATEST TRAINED CHECKPOINT (last.pt)
+    # --------------------------------------------------------------
+    last_ckpt_path = out / "last.pt"
+    if last_ckpt_path.exists():
+        print(f"Found existing checkpoint at {last_ckpt_path}, resuming...")
+        ckpt = torch.load(last_ckpt_path, map_location=device)
+
+        if isinstance(ckpt, dict) and "model" in ckpt:
+            # New-style rich checkpoint
+            model.load_state_dict(ckpt["model"])
+            if "optim" in ckpt:
+                optimizer.load_state_dict(ckpt["optim"])
+            if "sched" in ckpt:
+                scheduler.load_state_dict(ckpt["sched"])
+            best = ckpt.get("best_val", float("inf"))
+            start_epoch = ckpt.get("epoch", 1)
+            print(
+                f"Resumed from epoch {start_epoch} "
+                f"with best_val={best if best < float('inf') else 'inf'}"
+            )
+        else:
+            # Legacy state_dict-only checkpoint
+            model.load_state_dict(ckpt)
+            print("Resumed model weights from legacy last.pt (no optimizer/scheduler).")
+
+    # --------------------------------------------------------------
+    # TRAINING LOOP
+    # --------------------------------------------------------------
+    for epoch in range(start_epoch, cfg.EPOCHS + 1):
         train_loss = run_epoch(
             model, train_loader, optimizer, device, epoch, train=True
         )
@@ -387,12 +416,25 @@ def main():
 
         print(f"Epoch {epoch}: train={train_loss:.4f} val={val_loss:.4f}")
 
-        torch.save(model.state_dict(), out / "last.pt")
-
-        if val_loss < best:
+        # Check for improvement first
+        improved = val_loss < best
+        if improved:
             best = val_loss
+            # Keep best.pt as a pure state_dict so engine.py can load it
             torch.save(model.state_dict(), out / "best.pt")
             print(f"*** NEW BEST ({val_loss:.4f}) ***")
+
+        # Always save a rich 'last.pt' so we can resume later
+        torch.save(
+            {
+                "epoch": epoch + 1,          # next epoch to run
+                "model": model.state_dict(),
+                "optim": optimizer.state_dict(),
+                "sched": scheduler.state_dict(),
+                "best_val": best,
+            },
+            out / "last.pt",
+        )
 
     print("Training complete.")
 

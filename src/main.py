@@ -14,7 +14,7 @@ import torch
 # ============================================================
 
 # Relative path: src/main.py → src/model_save/best.pt
-MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/model_save/best_selfplay.pt")
+MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/model_save/best.pt")
 
 NUM_PLANES = 18
 NUM_PROMOS = 5   # [None, Q, R, B, N]
@@ -24,12 +24,25 @@ CP_SCALE = 200.0  # must match training
 MATE_SCORE = 100000.0  # used for checkmate scores
 
 # --- SEARCH TUNABLES (speed/strength knobs) ---
-MAX_SEARCH_DEPTH = 8             # 1 = eval every legal move once, 2 = light lookahead
-ROOT_TOP_K = 10                   # only these many moves get full-depth search (None = all)
-TIME_LIMIT_SECONDS = 0.2        # per-move soft limit; set to None to disable
+MAX_SEARCH_DEPTH = 3             # 1 = eval every legal move once, 2 = light lookahead
+ROOT_TOP_K = 8                   # only these many moves get full-depth search (None = all)
+TIME_LIMIT_SECONDS = 0.18        # per-move soft limit; set to None to disable
 CP_SOFTMAX_TEMPERATURE = 400.0   # for converting search scores to probs
 USE_POLICY_ROOT_ORDERING = True  # use NN policy to order root moves
-BONUS_CAPTURE_ORDERING = False    # simple capture-first ordering inside search
+BONUS_CAPTURE_ORDERING = False   # NOTE: disabled – was causing bad behavior
+
+# --- EVAL / DEBUG OPTIONS -----------------------------------
+# If your CP head was trained as "eval from WHITE POV", set this True.
+# If it was trained as "side-to-move POV", leave False.
+CP_IS_WHITE_POV = False
+
+# Policy-bias and blunder guard at root (all learned signals)
+POLICY_SCORE_LAMBDA = 0.05   # λ in score_root = search_value + λ * policy_logit
+BLUNDER_MARGIN_CP = 800.0    # moves worse than (best_value - margin) are discarded
+
+# Print debug info for each move at the root (helpful to see blunders)
+DEBUG_SEARCH = True
+DEBUG_TOP_K = 10  # how many root moves to show in debug dumps
 
 ENGINE = None  # will be set if NN loads
 
@@ -125,8 +138,9 @@ class PolicyOnlyEngine:
       - Eval & policy caching
       - Optional per-move time limit
 
-    IMPORTANT CHANGE:
-      Evaluation is now always from *side-to-move* POV for negamax correctness.
+    IMPORTANT:
+      We treat cp_pred as either WHITE-POV or side-to-move-POV,
+      controlled by CP_IS_WHITE_POV.
     """
 
     def __init__(self):
@@ -180,9 +194,9 @@ class PolicyOnlyEngine:
     def _forward(self, board: chess.Board):
         """
         Single NN forward for a board.
-        Returns (logits, cp_eval) where:
+        Returns (logits, cp_raw) where:
           - logits shape: (POLICY_DIM,)
-          - cp_eval: scalar eval (centipawns-like, stm POV)
+          - cp_raw: scalar eval (raw CP head output)
         """
         planes = board_to_planes(board)  # (18, 8, 8)
         x = torch.from_numpy(planes).unsqueeze(0).to(self.device)  # (1,18,8,8)
@@ -191,9 +205,9 @@ class PolicyOnlyEngine:
             # logits, delta_real, delta_pred, cp_real, cp_pred, res_pred
             logits, _, _, _, cp_pred, _ = self.model(x)
 
-        logits = logits[0].detach().cpu().numpy()  # (POLICY_DIM,)
-        cp_eval = float(cp_pred[0].item())         # scalar, stm POV
-        return logits, cp_eval
+        logits = logits[0].detach().cpu().numpy()   # (POLICY_DIM,)
+        cp_raw = float(cp_pred[0].item())           # scalar
+        return logits, cp_raw
 
     def _policy_logits(self, board: chess.Board) -> np.ndarray:
         """
@@ -208,16 +222,26 @@ class PolicyOnlyEngine:
 
     def _nn_eval_cp_stm(self, board: chess.Board) -> float:
         """
-        Cached NN evaluation in 'cp' from side-to-move POV.
+        Cached NN evaluation "from side-to-move POV" at this node.
+
+        If CP_IS_WHITE_POV is True, we assume cp_raw is from WHITE POV,
+        and flip sign when it's Black to move.
+        If False, we assume cp_raw is already STM POV.
         """
         z = self._zkey(board)
         key = (z, board.turn)
         if key in self.eval_cache:
             return self.eval_cache[key]
 
-        _, cp_eval = self._forward(board)
-        self.eval_cache[key] = cp_eval
-        return cp_eval
+        _, cp_raw = self._forward(board)
+
+        if CP_IS_WHITE_POV:
+            cp_stm = cp_raw if board.turn == chess.WHITE else -cp_raw
+        else:
+            cp_stm = cp_raw
+
+        self.eval_cache[key] = cp_stm
+        return cp_stm
 
     # -------------------------------
     # Evaluation & negamax (patched)
@@ -247,7 +271,6 @@ class PolicyOnlyEngine:
         if board.is_game_over():
             return self._evaluate_terminal_stm(board)
 
-        # NN cp eval is already from side-to-move POV
         cp_stm = self._nn_eval_cp_stm(board)
         return cp_stm
 
@@ -307,7 +330,7 @@ class PolicyOnlyEngine:
         return value
 
     # -------------------------------
-    # Root move selection
+    # Root move selection (with debug, policy bias, blunder guard)
     # -------------------------------
 
     def search_best_move(self, board: chess.Board, max_depth: int):
@@ -324,7 +347,7 @@ class PolicyOnlyEngine:
         if not legal_moves:
             return None, {}
 
-        root_color = board.turn  # kept for potential logging/debug
+        root_color = board.turn  # kept for logging/debug if needed
 
         # Start per-move timer
         if TIME_LIMIT_SECONDS is not None:
@@ -348,7 +371,7 @@ class PolicyOnlyEngine:
                 if 0 <= idx < POLICY_DIM:
                     score += policy_logits[idx]
             if BONUS_CAPTURE_ORDERING and board.is_capture(mv):
-                score += 10000.0  # big bump for captures
+                score += 10000.0
             return score
 
         if policy_logits is not None or BONUS_CAPTURE_ORDERING:
@@ -362,13 +385,18 @@ class PolicyOnlyEngine:
             primary_moves = legal_moves
             secondary_moves = []
 
-        best_move = None
-        best_value = -float("inf")
+        best_search_move = None
+        best_search_value = -float("inf")
         move_values = {}
+        move_leaf_evals = {}  # STM static eval after the move (for debug)
 
         # --- primary moves: full depth search ---
         for mv in primary_moves:
             board.push(mv)
+
+            # Static eval at child (side to move there)
+            leaf_eval = self._evaluate_stm(board)
+
             value = -self._negamax(
                 board,
                 depth=max_depth - 1,
@@ -378,9 +406,11 @@ class PolicyOnlyEngine:
             board.pop()
 
             move_values[mv] = value
-            if value > best_value or best_move is None:
-                best_value = value
-                best_move = mv
+            move_leaf_evals[mv] = leaf_eval
+
+            if value > best_search_value or best_search_move is None:
+                best_search_value = value
+                best_search_move = mv
 
             if self._time_exceeded():
                 # No time to do more fancy stuff
@@ -390,6 +420,7 @@ class PolicyOnlyEngine:
         if not self._time_exceeded() and secondary_moves:
             for mv in secondary_moves:
                 board.push(mv)
+                leaf_eval = self._evaluate_stm(board)
                 # Depth 1 search = just leaf eval (negamax will hit depth=0)
                 value = -self._negamax(
                     board,
@@ -400,12 +431,70 @@ class PolicyOnlyEngine:
                 board.pop()
 
                 move_values[mv] = value
-                if value > best_value or best_move is None:
-                    best_value = value
-                    best_move = mv
+                move_leaf_evals[mv] = leaf_eval
+
+                if value > best_search_value or best_search_move is None:
+                    best_search_value = value
+                    best_search_move = mv
 
                 if self._time_exceeded():
                     break
+
+        # -------------------------
+        # Policy-aware bias + blunder guard
+        # -------------------------
+
+        if not move_values:
+            return None, {}
+
+        # 1) Blunder guard: discard moves far worse than the best search value
+        best_value = best_search_value
+        safe_moves = [
+            mv for mv, val in move_values.items()
+            if val >= best_value - BLUNDER_MARGIN_CP
+        ]
+        if not safe_moves:
+            # Should be rare; fall back to all moves
+            safe_moves = list(move_values.keys())
+
+        # 2) Combine search value with policy logit (policy-aware scoring)
+        combined_scores = {}
+        for mv in safe_moves:
+            v = move_values[mv]
+            policy_term = 0.0
+            if policy_logits is not None:
+                idx = move_to_index(mv)
+                if 0 <= idx < POLICY_DIM:
+                    policy_term = POLICY_SCORE_LAMBDA * float(policy_logits[idx])
+            combined_scores[mv] = v + policy_term
+
+        # Choose best move by combined score
+        best_move = max(combined_scores.items(), key=lambda kv: kv[1])[0]
+
+        # Debug dump: show root move scores
+        if DEBUG_SEARCH:
+            print("========== ROOT DEBUG ==========")
+            print(f"Side to move: {'White' if root_color == chess.WHITE else 'Black'}")
+            print(f"FEN: {board.fen()}")
+            print(f"CP_IS_WHITE_POV: {CP_IS_WHITE_POV}")
+            print(f"Best pure search value: {best_search_value:.1f}")
+            print(f"Blunder margin: {BLUNDER_MARGIN_CP:.1f}")
+            print(f"Safe moves count: {len(safe_moves)} / {len(move_values)}")
+            # Sort moves by search value for inspection
+            debug_items = sorted(
+                move_values.items(),
+                key=lambda kv: kv[1],
+                reverse=True
+            )
+            for mv, val in debug_items[:DEBUG_TOP_K]:
+                leaf = move_leaf_evals.get(mv, float('nan'))
+                comb = combined_scores.get(mv, float('nan'))
+                print(
+                    f"Move {mv.uci():6s}  search={val:8.1f}  "
+                    f"leaf={leaf:8.1f}  comb={comb:8.1f}"
+                )
+            print(f"Chosen move: {best_move.uci()}")
+            print("================================")
 
         # Convert move_values to a probability distribution for logging
         if move_values:
@@ -517,7 +606,7 @@ def test_func(ctx: GameContext):
         return random.choices(legal_moves, weights=move_weights, k=1)[0]
 
     # -------------------------------
-    # MAIN PATH: negamax search (speed-optimized)
+    # MAIN PATH: negamax search
     # -------------------------------
     try:
         best_move, move_probs = ENGINE.search_best_move(board, MAX_SEARCH_DEPTH)
@@ -548,6 +637,7 @@ def test_func(ctx: GameContext):
         p = 1.0 / len(legal_moves)
         probs_filtered = {mv: p for mv in legal_moves}
 
+    # This is what the website uses to show the move probability bar chart.
     ctx.logProbabilities(probs_filtered)
     return best_move
 

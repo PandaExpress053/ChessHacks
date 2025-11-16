@@ -1,15 +1,39 @@
-# training/selfplay/rl_loop.py
+#!/usr/bin/env python3
+"""
+selfPlay/loop.py
+
+Reinforcement Learning Loop using self-play NPZ generator.
+
+Per cycle:
+  1) Decide which weights to start from:
+       - If best_selfplay.pt exists: start from that (continue RL).
+       - Else: start from best.pt (supervised baseline).
+
+  2) Generate self-play NPZ with generate_selfplay_npz(...)
+       - Uses PolicyOnlyEngine + StockfishEvaluator internally.
+
+  3) (Optional) Generate extra supervised mate-in-N data for this cycle
+       - Uses generate_mateN_npz_for_cycle(...) (Stockfish-labeled)
+
+  4) Train a new RL model on ALL NPZs in this cycle directory
+       - train_selfplay_model(...) reads NPZs and writes best_selfplay.pt.
+
+IMPORTANT:
+  - best.pt (supervised baseline) is NEVER overwritten in RL.
+  - RL_MODEL_PATH = best_selfplay.pt (lives next to best.pt).
+"""
 
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-import chess
-import chess.pgn
 import torch
 
-from .config import (
+# ----------------------------------------------------------------------
+# Imports from your training package
+# ----------------------------------------------------------------------
+from selfPlay.config import (
     SELFPLAY_OUT_DIR,
     MODEL_PATH,          # supervised best.pt
     NUM_GAMES,
@@ -18,305 +42,217 @@ from .config import (
     SF_TIME_LIMIT,
 )
 
-from .selfplayGEN import (
+from selfPlay.selfplayGEN import (
     generate_selfplay_npz,
     BLUNDER_PLAY_PROB,
     SF_GUIDE_GAME_PROB,
 )
 
-from .trainselfplay import train_selfplay_model
-from src.main import PolicyOnlyEngine
+from selfPlay.trainselfplay import train_selfplay_model
+from selfPlay.mategen import generate_mateN_npz_for_cycle
 
-# Some configs might not define SELFPLAY_ENGINE_DEPTH;
-# fall back to a sensible default.
-try:
-    from .config import SELFPLAY_ENGINE_DEPTH as _DEPTH
-    SELFPLAY_ENGINE_DEPTH = _DEPTH
-except Exception:
-    SELFPLAY_ENGINE_DEPTH = 4  # safe default
 
-SELFPLAY_OUT_DIR = Path(SELFPLAY_OUT_DIR)
+# RL weights: live next to best.pt
 SUPER_MODEL_PATH = Path(MODEL_PATH)
-
-# RL weights live alongside best.pt
 RL_MODEL_PATH = SUPER_MODEL_PATH.with_name("best_selfplay.pt")
 
-
-# ======================================================================
-# ENGINE HELPERS (USE RL WEIGHTS IF AVAILABLE)
-# ======================================================================
-
-def _build_rl_engine() -> PolicyOnlyEngine:
-    """
-    Build a PolicyOnlyEngine and, if RL weights exist, load them on top.
-    This way:
-      - src/main.py and submission still use best.pt normally.
-      - self-play + visualization use best_selfplay.pt if it exists.
-    """
-    engine = PolicyOnlyEngine()  # loads SUPER_MODEL_PATH inside
-
-    if RL_MODEL_PATH.is_file():
-        try:
-            state = torch.load(RL_MODEL_PATH, map_location="cpu")
-            if isinstance(state, dict) and "policy_head.weight" not in state:
-                state = state.get("model", state)
-            engine.model.load_state_dict(state, strict=False)
-            print(f"[RL_ENGINE] Loaded RL weights from {RL_MODEL_PATH}")
-        except Exception as e:
-            print(f"[RL_ENGINE] Failed to load RL weights ({e}), using base MODEL_PATH.")
-
-    return engine
+SELFPLAY_OUT_DIR = Path(SELFPLAY_OUT_DIR)
 
 
 # ======================================================================
-# RL SCHEDULE: DECAY SF HELP + BLUNDERS OVER CYCLES
+# Utils
 # ======================================================================
 
-def compute_schedule_for_cycle(
-    cycle_idx: int,
-    total_cycles: int,
-) -> tuple[float, float, float]:
-    """
-    Returns (blunder_prob, sf_guide_prob, conversion_cp_threshold)
-    for this RL cycle.
+def get_device() -> torch.device:
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    if torch.backends.mps.is_available():
+        return torch.device("mps")
+    return torch.device("cpu")
 
-    Goals:
-      - Early cycles:
-          * small blunder rate (to learn to punish, not live in chaos)
-          * some SF-guided games (but at least 33% pure model-vs-model)
-          * low conversion threshold so SF converts won positions to mate
-      - Later cycles:
-          * blunders -> almost 0
-          * sf_guide_prob -> 0 (100% model-vs-model)
-          * conversion threshold high (almost no SF autopilot)
+
+def choose_start_weights() -> Path:
     """
-    if total_cycles <= 1:
-        progress = 0.0
+    Decide which weights to start RL from.
+
+    Priority:
+      1) If best_selfplay.pt exists, use that (continue RL).
+      2) Otherwise, use best.pt (supervised baseline).
+
+    Note: This does NOT control which weights selfplay_generator uses
+    internally (PolicyOnlyEngine may still use MODEL_PATH from config),
+    but it DOES control which weights we train from and where we save
+    the updated RL model.
+    """
+    if RL_MODEL_PATH.exists():
+        print(f"[RL] Found existing RL weights: {RL_MODEL_PATH}")
+        return RL_MODEL_PATH
     else:
-        progress = cycle_idx / float(total_cycles - 1)  # 0 → 1
-
-    # Help factor: 1 at first cycle, 0 at last cycle
-    help_factor = 1.0 - progress
-
-    # Make blunders relatively rare and decay quickly:
-    # base BLUNDER_PLAY_PROB is 0.15 → effective at most ~0.075 early
-    blunder_prob = BLUNDER_PLAY_PROB * 0.5 * (help_factor ** 1.5)
-    blunder_prob = min(blunder_prob, 0.10)
-
-    # SF-guided games: bounded so guided_games <= 0.67 ⇒ >= 33% pure model-vs-model
-    sf_guide_prob = 0.67 * help_factor  # from ~0.67 → 0.0 across cycles
-
-    # Conversion threshold:
-    #   early: ~400 cp → SF converts many winning positions to mate
-    #   late: grows, so SF rarely takes over
-    base_conv_cp = 400.0
-    min_help_for_conv = 0.25
-    denom = max(help_factor, min_help_for_conv)
-    conversion_cp_threshold = base_conv_cp / denom  # 400 → 1600+ as help shrinks
-
-    return blunder_prob, sf_guide_prob, conversion_cp_threshold
+        print(f"[RL] No RL weights yet; starting from supervised: {SUPER_MODEL_PATH}")
+        return SUPER_MODEL_PATH
 
 
 # ======================================================================
-# ONE RL CYCLE: GENERATE + TRAIN
+# Main RL loop
 # ======================================================================
 
-def run_one_cycle(
-    cycle_idx: int,
-    total_cycles: int,
-    num_games: int,
-    top_k: int = TOP_K_MOVES,
-    max_moves: int = MAX_MOVES_PER_GAME,
-    sf_time_limit: float = SF_TIME_LIMIT,
-):
-    """
-    One RL iteration:
-      1) Generate self-play data with current RL weights
-      2) Fine-tune RL model on that data, saving into RL_MODEL_PATH
-    """
-    dataset_path = SELFPLAY_OUT_DIR / "selfplay_sf_topk_dataset.npz"
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Self-play RL loop")
 
-    blunder_prob, sf_guide_prob, conv_cp = compute_schedule_for_cycle(
-        cycle_idx=cycle_idx,
-        total_cycles=total_cycles,
-    )
-
-    print("=" * 80)
-    print(
-        f"[CYCLE {cycle_idx}] SCHEDULE:"
-        f" blunder_prob={blunder_prob:.3f},"
-        f" sf_guide_prob={sf_guide_prob:.3f},"
-        f" conversion_cp_threshold={conv_cp:.1f} cp"
-    )
-
-    # Self-play generation (cap SF time a bit for speed)
-    effective_sf_time = min(sf_time_limit, 0.03)
-
-    print(f"[CYCLE {cycle_idx}] Generating self-play dataset → {dataset_path}")
-    generate_selfplay_npz(
-        out_path=dataset_path,
-        num_games=num_games,
-        top_k=top_k,
-        max_moves=max_moves,
-        sf_time_limit=effective_sf_time,
-        blunder_prob=blunder_prob,
-        sf_guide_prob=sf_guide_prob,
-        conversion_cp_threshold=conv_cp,
-    )
-
-    print(f"[CYCLE {cycle_idx}] Training on self-play data (fine-tune RL model)...")
-    train_selfplay_model(dataset_path, RL_MODEL_PATH)
-    print(f"[CYCLE {cycle_idx}] Done training, RL weights updated at {RL_MODEL_PATH}")
-
-
-# ======================================================================
-# VISUALIZATION HELPERS
-# ======================================================================
-
-def visualize_self_play(max_ply: int = 120):
-    """
-    Visualize a single self-play game with the CURRENT RL weights.
-    Pure RL engine (no SF move selection).
-    """
-    print("-" * 80)
-    print("[VISUALIZE] Playing a self-play game with current RL model...")
-
-    engine = _build_rl_engine()
-    engine.reset()
-
-    board = chess.Board()
-    game = chess.pgn.Game()
-    game.headers["White"] = "RL-Engine"
-    game.headers["Black"] = "RL-Engine"
-    node = game
-
-    ply = 0
-    while not board.is_game_over() and ply < max_ply:
-        best_move, _ = engine.search_best_move(
-            board,
-            max_depth=SELFPLAY_ENGINE_DEPTH,
-        )
-        if best_move is None:
-            print("[VISUALIZE] No legal move returned; stopping.")
-            break
-
-        board.push(best_move)
-        node = node.add_variation(best_move)
-        ply += 1
-
-    if board.is_game_over():
-        game.headers["Result"] = board.result()
-    else:
-        game.headers["Result"] = "*"
-
-    print("[VISUALIZE] PGN of self-play game:\n")
-    print(game)
-    print()
-
-
-def dump_checkmate_pgn(
-    cycle_idx: int,
-    max_tries: int = 3,
-    max_ply: int = 200,
-):
-    """
-    Try up to max_tries times to generate a self-play game that ends in checkmate
-    using the CURRENT RL model, and dump it as a PGN file for inspection.
-    """
-    engine = _build_rl_engine()
-
-    for attempt in range(1, max_tries + 1):
-        print(f"[CYCLE {cycle_idx}] Generating PGN example game (attempt {attempt}/{max_tries})")
-
-        engine.reset()
-        board = chess.Board()
-        game = chess.pgn.Game()
-        game.headers["White"] = "RL-Engine"
-        game.headers["Black"] = "RL-Engine"
-
-        node = game
-        ply = 0
-
-        while not board.is_game_over() and ply < max_ply:
-            best_move, _ = engine.search_best_move(
-                board,
-                max_depth=SELFPLAY_ENGINE_DEPTH,
-            )
-            if best_move is None:
-                break
-
-            board.push(best_move)
-            node = node.add_variation(best_move)
-            ply += 1
-
-        if board.is_checkmate():
-            game.headers["Result"] = board.result()
-            pgn_str = str(game)
-
-            pgn_path = SELFPLAY_OUT_DIR / f"cycle_{cycle_idx:03d}_example.pgn"
-            with open(pgn_path, "w", encoding="utf-8") as f:
-                f.write(pgn_str)
-
-            print(f"[CYCLE {cycle_idx}] Saved checkmate PGN to {pgn_path}\n")
-            print(pgn_str)
-            print()
-            return
-
-        else:
-            result_desc = board.result() if board.is_game_over() else "incomplete"
-            print(f"[CYCLE {cycle_idx}] Game did not end in checkmate (result={result_desc}).")
-
-    print(f"[CYCLE {cycle_idx}] Failed to generate a checkmate game in {max_tries} attempts.")
-
-
-# ======================================================================
-# MAIN CLI
-# ======================================================================
-
-def main():
-    parser = argparse.ArgumentParser(
-        description="Run RL self-play cycles (generate → train → visualize)."
-    )
+    # Number of RL cycles
     parser.add_argument(
         "--cycles",
         type=int,
         default=1,
-        help="Number of (generate → train → visualize) RL cycles to run.",
+        help="Number of RL self-play + train cycles.",
     )
+
+    # Games per cycle (default from config)
     parser.add_argument(
         "--games-per-cycle",
         type=int,
         default=NUM_GAMES,
-        help="Number of self-play games per generation run.",
+        help="Number of self-play games per RL cycle.",
+    )
+
+    # Optional device override
+    parser.add_argument(
+        "--device",
+        type=str,
+        default=None,
+        help="Torch device (e.g. 'cuda', 'cpu'). Default: auto-detect.",
+    )
+
+    # ------------------------------------------------------------------
+    # Mate-in-N supervised augmentation (optional)
+    # ------------------------------------------------------------------
+    parser.add_argument(
+        "--mate-supervised",
+        action="store_true",
+        help="Also generate supervised mate-in-N data each RL cycle.",
     )
     parser.add_argument(
-        "--visualize-max-ply",
+        "--mate-samples",
         type=int,
-        default=120,
-        help="Max number of plies to play in the visualization game.",
+        default=2000,
+        help="Number of mate-in-N positions per cycle (if enabled).",
+    )
+    parser.add_argument(
+        "--mate-max-dist",
+        type=int,
+        default=8,
+        help="Keep only positions with |mate_distance| <= this.",
+    )
+    parser.add_argument(
+        "--sf-engine",
+        type=str,
+        default=None,
+        help="Path to Stockfish binary for mate-in-N generator "
+             "(required if --mate-supervised is used).",
+    )
+
+    # Optional schedule scale for blunders / SF guidance over cycles
+    parser.add_argument(
+        "--blunder-scale",
+        type=float,
+        default=1.0,
+        help="Scale factor for blunder probability across cycles "
+             "(1.0 = no change).",
+    )
+    parser.add_argument(
+        "--sf-guide-scale",
+        type=float,
+        default=1.0,
+        help="Scale factor for SF-guided-game probability across cycles "
+             "(1.0 = no change).",
     )
 
     args = parser.parse_args()
 
-    for c in range(args.cycles):
-        run_one_cycle(
-            cycle_idx=c,
-            total_cycles=args.cycles,
+    device = torch.device(args.device) if args.device is not None else get_device()
+    print(f"[RL] Using device (for training): {device}")
+
+    if args.mate_supervised and args.sf_engine is None:
+        raise SystemExit(
+            "You enabled --mate-supervised but did not provide --sf-engine "
+            "(path to Stockfish)."
+        )
+
+    start_weights_path = choose_start_weights()
+
+    # ------------------------------------------------------------------
+    # Main RL cycles
+    # ------------------------------------------------------------------
+    for cycle in range(args.cycles):
+        print("=" * 70)
+        print(f"[RL] Starting cycle {cycle} / {args.cycles - 1}")
+        print("=" * 70)
+
+        # Directory for this cycle's data
+        cycle_dir = SELFPLAY_OUT_DIR / f"cycle_{cycle:03d}"
+        cycle_dir.mkdir(parents=True, exist_ok=True)
+        print(f"[RL] Cycle output directory: {cycle_dir}")
+
+        # --------------------------------------------------------------
+        # 1) Generate self-play NPZ for this cycle
+        # --------------------------------------------------------------
+        out_npz = cycle_dir / f"cycle_{cycle:03d}_selfplay.npz"
+
+        # Optionally schedule blunder/SF-guided probabilities over cycles
+        eff_blunder = BLUNDER_PLAY_PROB * (args.blunder_scale ** cycle)
+        eff_sf_guide = SF_GUIDE_GAME_PROB * (args.sf_guide_scale ** cycle)
+
+        print(f"[RL] Generating self-play NPZ at {out_npz}")
+        print(
+            f"[RL]  blunder_prob={eff_blunder:.3f}, "
+            f"sf_guide_prob={eff_sf_guide:.3f}"
+        )
+
+        generate_selfplay_npz(
+            out_path=out_npz,
             num_games=args.games_per_cycle,
             top_k=TOP_K_MOVES,
             max_moves=MAX_MOVES_PER_GAME,
             sf_time_limit=SF_TIME_LIMIT,
+            blunder_prob=eff_blunder,
+            sf_guide_prob=eff_sf_guide,
+            # conversion_cp_threshold left default (800) for now
         )
 
-        visualize_self_play(max_ply=args.visualize_max_ply)
-        dump_checkmate_pgn(cycle_idx=c, max_tries=3, max_ply=200)
+        # --------------------------------------------------------------
+        # 1b) (OPTIONAL) Generate mate-in-N supervised NPZ
+        # --------------------------------------------------------------
+        if args.mate_supervised:
+            print(f"[RL] Generating supervised mate-in-N shard for cycle {cycle}...")
+            generate_mateN_npz_for_cycle(
+                cycle_idx=cycle,
+                out_dir=cycle_dir,
+                engine_path=args.sf_engine,
+                num_positions=args.mate_samples,
+                max_mate_distance=args.mate_max_dist,
+                time_limit=SF_TIME_LIMIT,
+                prefix="mateN",
+            )
 
-    print("=" * 80)
-    print(
-        f"RL loop finished.\n"
-        f"  Supervised best.pt : {SUPER_MODEL_PATH}\n"
-        f"  RL best_selfplay.pt: {RL_MODEL_PATH}\n"
-    )
+        # --------------------------------------------------------------
+        # 2) Train RL model on this cycle's data
+        # --------------------------------------------------------------
+        print("[RL] Training self-play model on this cycle's data...")
+
+        # NOTE: This assumes train_selfplay_model looks at ALL .npz in `data_dir`.
+        # If its signature is different, we can adjust once we see it.
+        train_selfplay_model(
+            data_dir=cycle_dir,
+            init_model_path=start_weights_path,
+            rl_model_path=RL_MODEL_PATH,
+            device=device,
+        )
+
+        # New starting weights for the next cycle
+        start_weights_path = RL_MODEL_PATH
+        print(f"[RL] Finished cycle {cycle}. Updated RL weights: {RL_MODEL_PATH}")
+
+    print("[RL] All cycles completed.")
 
 
 if __name__ == "__main__":

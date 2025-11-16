@@ -1,0 +1,1430 @@
+[Event "100 Endgames You Must Know: GUIDE"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "GUIDE"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/wiB4PxOH"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/3k4/8/3K4/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ 1 e 2 - Basic Endings and Basic Test 📌
+https://lichess.org/study/Aq49nFJC
+3 - KNIGHT VS PAWN
+https://lichess.org/study/E8pSmida
+4 - QUEEN VS PAWN
+https://lichess.org/study/twv8xpmZ
+5 - ROOK VS PAWN
+https://lichess.org/study/jm1gEgTW
+6 - ROOK VS 2 PAWNS
+https://lichess.org/study/hsXRYKMt
+7 - SAME COLOURED BISHOPS: B+P vs. B
+https://lichess.org/study/IekaYIzt
+8 - BISHOP VS KNIGHT: ONE PAWN
+https://lichess.org/study/6Jn9UEzd
+9 - OPP. COLOURED BISHOPS
+https://lichess.org/study/0dNf1F0d
+10 - ROOK + PAWN VS ROOK
+https://lichess.org/study/hO3ohbND
+11 - ROOK + 2 PAWNS VS ROOK
+https://lichess.org/study/WinOoYPp
+12 - PAWN ENDINGS
+https://lichess.org/study/R3o5JEm1 (Part 1)
+https://lichess.org/study/33MisLJC (Part 2)
+13 - OTHER MATERIAL RELATIONS
+https://lichess.org/study/rhUe3oCX
+14 - FINAL TEST
+https://lichess.org/study/uEc9Wyqc }
+ *
+
+
+[Event "100 Endgames You Must Know: 1. Basic endings - Introduction"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "1. Basic endings - Introduction"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/J9zlnk92"]
+[Annotator "https://lichess.org/@/Raoni"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ A great part of this chapter is devoted to King + Pawn vs. King endings. Most players handle these endings with confidence, but some have trouble in less common positions. Very often the problem lies in the overuse of the theory of the opposition. While opposition is a very useful concept and its best field of application is Pawn endings, its value is sometimes overestimated.
+
+King + Pawn vs. King endings are best explained by means of the key squares theory, using opposition at the right time and adapting its value to each situation. I assume the reader knows the basic mates and the Bishop + Wrong Rook's Pawn ending. In any case, a perfect demonstration of these endings can be found in many books.
+
+PRESS "NEXT CHAPTER" TO BEGIN! }
+ *
+
+
+[Event "100 Endgames You Must Know: ENDING 1 (Position 1.1 & 1.2) - The rule of the square"]
+[Date "2020.12.23"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 1 (Position 1.1 & 1.2) - The rule of the square"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/Eua9n8hr"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "6k1/8/8/8/8/8/P7/7K w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ The first question we have to answer in King + Pawn vs. King endings is this: Can the pawn promote without the aid of the king?
+
+Calculating the race between the pawn and the enemy king is enough to answer this question. This calculation is not complicated but, anyway, experience has taught us a simple way to solve the problem at a glance: the so-called 'rule of the square'. This rule helps us calculate and can be applied to any other endgame which presents the same race situation.
+Do the green move! } { [%csl Ga2][%cal Ga2a4] }
+1. a4 { After the pawn advances, we draw an imaginary square that reaches the 8th rank. In this example the vertices of the square are a4-a8-e8-e4. } { [%csl Ba4,Be4,Be8,Ba8][%cal Ba4e8,Ba4a8,Ba4e4,Be4e8,Be8a8] } 1... Kf7 { Of course, the black king tries to prevent promotion. Now we are ready to state the main rule.
+"Rule of the square: If the king can reach the square of the pawn, then he can capture the pawn; if not, the pawn promotes."
+If, when recalling the rule, we doubt whether the king must reach the square with his move or he must already be inside, we shall observe this: if the king chased the pawn from the rear (in this example it might be from b3), should he be inside the square before moving? Of course not: therefore, it would be the same if the king came from farther away, be it from the pawn's rear or from its side. } { [%csl Ga4][%cal Ga4a5] } 2. a5 { It is clear that, in this case, the enemy king has not reached the square of the pawn, so White wins. } { [%csl Yd5,Yd8,Ya8,Ya5][%cal Ya5d5,Yd5d8,Yd8a8,Ya5a8,Ya5d8] } 2... Ke6 { [%csl Ga5][%cal Ga5a6] } 3. a6 { [%csl Ra6,Rc6,Rc8,Ra8][%cal Ra6c6,Rc6c8,Rc8a8,Ra6a8,Ra6c8] } 3... Kd6 { [%csl Ga6][%cal Ga6a7] } 4. a7 Kc7 { [%csl Ga7][%cal Ga7a8] } 5. a8=Q { 1 - 0 } (5. a8=R { Alternative. }) 1-0
+
+
+[Event "100 Endgames You Must Know: Position 1.3 - The rule of the square"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.3 - The rule of the square"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/ryaVGBK7"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/4k3/2K5/8/8/8/1P6/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Blocking the way and supporting the pawn with the king.
+Let us now look at Position 1.3. The black king has clearly reached the square. Now the pawn can promote only with the aid of the king. The easiest way is by blocking the enemy king's way.
+
+This concept of blocking appears very often in pawn endings, but also in many others, and it is at the core of Rook vs. Pawn endings.
+
+We can now state the second rule, which works with almost all pawns, the exception being the rook's pawn.
+When possible, the stronger side's king will prevent its rival from standing in front of the pawn. If he succeeds, the pawn promotes. } { [%csl Gc6][%cal Gc6c7] }
+1. Kc7 { Preventing ...Kc8 followed by ...Kb8 to stand in the pawn's way. Besides, from this square the king secures the pawn's path to b8. } { [%csl Gb2][%cal Gb3b4,Gb4b5,Gb5b6,Gb6b7,Gb7b8,Gb2b4] } 1... Ke6 { Since the black king cannot get in front of the pawn, he tries to attack the pawn before it reaches the secure zone (b6-b7-b8) .
+Let us use this example to point out that, if the stronger side's king has secured the side opposition on the 7th rank, the defender will not be able to disturb the pawn. } { [%csl Rb6,Rb7,Rb8,Gb2][%cal Gb2b4] } 2. b4 Kd5 { [%csl Gb4][%cal Gb4b5] } 3. b5 { 1 -- 0 } { [%csl Bb5][%cal Bb5b6,Bb5b8,Bb5b7] } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/nRrcxmqG"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/4k3/2K5/8/8/8/1P6/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Kc7 Ke6 2. b4 Kd5 3. b5 Kc5 4. b6 { [%csl Gb6][%cal Gb6b8] } *
+
+
+[Event "100 Endgames You Must Know: ENDING 2 (Position 1.4) - The pawn is on the 6th rank"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 2 (Position 1.4) - The pawn is on the 6th rank"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/6btUlGa3"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/5PK1/8/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Opposition
+
+We have just seen what happens in the two simplest cases:
+
+1 - When the king does not support the pawn.
+
+2 - When the king supports the pawn by preventing the enemy king from standing in its way.
+
+However, the most interesting situation in a King + Pawn vs. King ending occurs when the defending king occupies a key square in front of the pawn. Then, everything depends on the relative position of the kings.
+
+The first important position, which we must fix in our minds, occurs when the pawn has reached the 6th rank and is only two steps away from the promotion square. Despite the proximity of the 8th rank, we will need to examine some positions before we grasp all the important details. In Position 1.4, the pawn can take its two last steps almost automatically. } { [%csl Gf6][%cal Gf6f7] }
+1. f7 { The pawn moves ahead and Black must retreat his king; the white king can thus support promotion. } 1... Ke7 { [%csl Gg6][%cal Gg6g7] } 2. Kg7 { 1 - 0 } { [%csl Bf7][%cal Bf7f8] } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/uZUC4ZPM"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/5PK1/8/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. f7 Ke7 2. Kg7 *
+
+
+[Event "100 Endgames You Must Know: Position 1.5 - The pawn is on the 6th rank"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.5 - The pawn is on the 6th rank"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/xJ7powHZ"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/5PK1/8/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ However, the result changes completely if in Position 1.4 it is Black's turn. The reason is that the pawn cannot promote if both kings are opposed when the pawn reaches the 7th rank. Then we say that they are in opposition, like here after Black's first move:
+
+1... ♔g8 ! } { [%csl Gf8][%cal Gf8g8] }
+1... Kg8 { Now the kings are opposed and in this situation, almost always, the side that has the opposition has the advantage, and the side to move is at a disadvantage.
+As stated above, opposition has gained an excessive prestige; in some cases it is not so useful. If we want to make the most of it, and not to let it deceive us, we just have to notice how it suits us in each case.
+"In a King + Pawn vs. King ending, king opposition is decisive when the pawn is on the 6th rank."
+This is the first important pattern we must recognise. } { [%csl Rg6][%cal Gg8g6,Gg6g8] } 2. f7+ { Here the pawn moves ahead but cannot promote. Anyway, other moves would not win against an accurate defence. For instance:
+2.Kg5Kf7 !
+2...Kf8 is also good
+The safest way for the defender is to stay on the two squares available in front of the pawn. This fortress cannot be broken. If you have not done this before, it is worth observing and analysing this simple sequence3.Kf5 Kf8 ! (staying in front of the pawn is always the simplest way) 4.Kf4 Kf7 !5.Kf5 Kf8 6.Ke6 (if the defending king has always waited in front of the pawn, it is possible to get the opposition now that the enemy king must retreat from that file)6...Ke8! 7.f7+ Kf8 8.Kf6 stalemate, as in the main line. } { [%cal Gg8f8] } 2... Kf8 { In contrast with Position 1.4, White is to move and to prevent the loss of the pawn, he must stalemate Black’s king. } 3. Kf6 { and draw by stalemate.
+In this ending we have seen that, if the defending king takes the opposition when the pawn is on the 6th rank, the pawn cannot promote. If we go deeper, we also see that the major obstacle for the white king has been his own pawn. Therefore, we can conclude that:
+1) The stronger side must not push the pawn too quickly.
+2) The pawn should only reach the 6th rank in one of these two scenarios: a) its path to promotion is clear, or b) its advance causes the kings to be opposed (but usually this only happens when the king has reached the 6th rank before the pawn)
+Let us have a look at two more positions to consolidate some ideas related to the 6th-rank opposition. Then, our next positions will focus on how to manoeuvre before the pawn reaches the 6th rank. } { [%csl Rf6,Bg7,Bf7,Be7,Gf8] } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/i6EVvDio"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/5PK1/8/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1... Kg8 2. f7+ Kf8 *
+
+
+[Event "100 Endgames You Must Know: Position 1.6 - The pawn is on the 6th rank"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.6 - The pawn is on the 6th rank"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/J0P263V7"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "k7/8/2P5/K7/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Regardless of the starting position of the kings: when the pawn is on the 6th rank, their manoeuvres are driven by opposition, as we will see in the analysis diagram and in the following position:
+1. ♔a6! } { [%cal Ga5a6] }
+1. Ka6 { Taking the opposition. Not
+1.Kb6?? Kb8! and it is Black who takes the opposition. } { [%csl Ba8,Ba6] } 1... Kb8 { 2. ♔b6! } { [%cal Ga6b6] } 2. Kb6 Kc8 { 2...♔a8 may be a clever attempt to induce a mistake, exploiting the proximity of the edge of the board, but fails against accurate play: 3. ♔c7!
+3. c7??would be a gross mistake
+3 ...♔a7 4.♔d7 and the pawn promotes. } { [%cal Gc6c7] } (2... Ka8 3. Kc7! Ka7 4. Kd7 { [%csl Bc6][%cal Bc6c8] }) 3. c7 Kd7 { 4. ♔b7 } { [%csl Gb6][%cal Gb6b7] } 4. Kb7 { and the pawn promotes. } { [%cal Bc7c8] } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/p3mmkPvl"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "k7/8/2P5/K7/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Ka6 Kb8 2. Kb6 Kc8 3. c7 Kd7 4. Kb7 { [%csl Gc7][%cal Gc7c8] } *
+
+
+[Event "100 Endgames You Must Know: Position 1.7 - The pawn is on the 6th rank"]
+[Date "2020.12.23"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.7 - The pawn is on the 6th rank"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/6Ug32Spr"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/6k1/4P3/6K1/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ --Losing the opposition --
+Most mistakes made in King + Pawn vs. King endings occur in this position. The reason is that this situation is just provisional: the black king cannot keep the opposition because the pawn controls the f7-square. As stated above, the best squares for the lone king are those in front of the pawn. Otherwise, he may not get there in the right circumstances. This occurs in the next example, which is also important to find out why opposition is sometimes useless. Black loses, no matter who has the move. If Black is to move, the white king will immediately take the opposition on the 6th rank; if White is to move ...
+1. ♔f5! } { [%csl Gg5][%cal Gg5f5] }
+1. Kf5 { Now, wherever the black king moves, he loses the opposition. The important conclusion is:
+Once we take the opposition, we lose it if one of the squares we need is out of reach. } 1... Kg8 { 1...Kf8 2.Kf6
+2.♔g6! } { [%csl Gf5][%cal Gf5g6] } 2. Kg6 { [%csl Gg6,Rg8] } 2... Kf8 { 3. ♔f6 } { [%csl Gg6][%cal Gg6f6] } 3. Kf6 { The white king has gained the important 6th-rank opposition and wins } { [%csl Gf6,Rf8] } 3... Ke8 { [%csl Ge6][%cal Ge6e7] } 4. e7 Kd7 { 5. ♔f7 } { [%csl Gf6][%cal Gf6f7] } 5. Kf7 { One last example to make sure that we have taken into consideration all the subtleties of this ending. Not all pawns work the same. As we get closer to the edge of the board, pawns usually have their own rules. Therefore, I will devote a special section to the rook's pawn. The knight's pawn is not so exceptional, but nevertheless it presents some peculiarities due to the proximity of the edge of the board.
+1-0 } { [%csl Be7][%cal Be7e8] } 1-0
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/nUsg7KR9"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/6k1/4P3/6K1/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Kf5 Kg8 2. Kg6 Kf8 3. Kf6 Ke8 4. e7 Kd7 5. Kf7 1-0
+
+
+[Event "100 Endgames You Must Know: Position 1.8 - The pawn is on the 6th rank"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.8 - The pawn is on the 6th rank"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/f0Luarzz"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/8/8/5kp1/7K/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Knight's pawn
+
+Let us have a look at the position: It is White's turn and he cannot take the opposition, while we know that if the king moves in front of the pawn he will have to retreat from his blocking position on his next move. This position would be lost if Black had a central pawn, but with a knight's pawn White can be saved thanks to a special detail.
+1. ♔h1! } { [%csl Gh2][%cal Gh2h1] }
+1. Kh1 { The right move. This relative position of the kings, called diagonal opposition, usually does not help much, but works in this case. } { [%csl Rf3][%cal Rf3f2,Yh1f3,Yf3h1] } 1... Kf2 { This move would secure promotion with any other pawn, but now the white king is in stalemate and the position is drawn. The pawn cannot promote against other moves either, since the white king comes back to his impregnable position in front of the pawn. } { [%csl Rh2,Rg2,Rg1] } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/JYGZFg2k"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/8/6p1/5k2/7K/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1... g3+ 2. Kh1 Kf2 *
+
+
+[Event "100 Endgames You Must Know: ENDING 3 - Position 1.9 - Key squares"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 3 - Position 1.9 - Key squares"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/6Gq3YamN"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/4K3/5P2/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ When the pawn has not reached the 6th rank yet, the analysis grows in complexity, but there are very clear rules. If we know them, we will play the ending with accuracy and we will quickly know whether the pawn promotes or not. The essential concept here is that of key squares. But what are key squares and what is their effect?
+
+"If the strong king occupies one of the key squares, the pawn promotes. When the pawn is on the 5th rank, its key squares are those three in front ( e6, f6 and g6, marked in the diagram )."
+
+Since the king has reached one of them, White wins:
+1. ♔f6! } { [%csl Re6,Rf6,Rg6][%cal Ge6f6] }
+1. Kf6 { Of course not
+1.f6 ?? Ke8!
+taking the opposition and thus drawing. As we have said, there is no need to hurry to push the pawn. The white king must pave the way first. } { [%csl Be6,Bf6,Bg6,Rf8] } 1... Ke8 { The black king has retreated from the pawn’s path. What is the move that secures promotion? } { [%cal Yf8e8] } 2. Kg7 { Now the pawn's path is clear and promotion comes in three moves. } { [%cal Gg7f8,Gg7f7,Gg7f6,Bf5f8] } 2... Ke7 { f6 } { [%csl Gf5][%cal Gf5f6] } 3. f6+ Ke6 { f7 } { [%csl Gf6][%cal Gf6f7] } 4. f7 { If, in the starting position, the white king had been on g6, 1. Kf6 would have led to the same position; if on f6, White wins with
+1.Ke6 Ke8 2.f6, taking the opposition in the key situation: when the pawn reaches the 6th rank. Were it Black's turn in any of the three examples, White would win by means of one of those two manoeuvres: either supporting the pawn from the 7th rank or taking the opposition.
+Therefore, we have seen that White wins if his king reaches any key square. That will condition our previous play. } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/3r1nAylI"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/4K3/5P2/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Kf6 Ke8 2. Kg7 Ke7 3. f6+ Ke6 4. f7 *
+
+
+[Event "100 Endgames You Must Know: Position 1.10 - Key squares"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.10 - Key squares"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/ToZiJGJC"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "7k/5K2/8/6P1/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Knight's pawn
+
+Once again, the knight's pawn poses extra difficulties, but the key square rule still applies. We just need to be slightly more careful.
+1.♔6! } { [%csl Gf7][%cal Gf7g6] }
+1. Kg6 { 1.g6 ? Stalemate;
+1.Kf6 This move does not let victory slip but, if Black plays accurately, White has to return to the starting position.1...Kh7 !
+1...Kg8 2.Kg6 Kh8 3.Kf7 Kh7 4.g6+ Kh8 5.g7+ ±
+2.g6+ ?? this move does miss the victory;
+as we have seen in Position 1.8, 2.Kf7 ! is the correct move, returning to the starting position.
+2...Kh8 ! Now the pawn cannot be promoted. } { [%csl Bf6,Bg6,Bh6] } 1... Kg8 { 2. ♔h6 } { [%csl Gg6][%cal Gg6h6] } 2. Kh6 Kh8 { [%csl Gg5][%cal Gg5g6] } 3. g6 { With the king at this side of the pawn, promotion runs smoothly, as shown in Position 1.4. } { [%csl Gh6,Rh8] } 3... Kg8 { 4. g7 } { [%csl Gg6][%cal Gg6g7] } 4. g7 Kf7 { 5. ♔h7 } { [%csl Gh6][%cal Gh6h7] } 5. Kh7 { 1 - 0 } { [%csl Yg7][%cal Yg7g8] } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/750uhKgz"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "7k/5K2/8/6P1/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Kg6 Kg8 2. Kh6 Kh8 3. g6 Kg8 4. g7 Kf7 5. Kh7 *
+
+
+[Event "100 Endgames You Must Know: Position 1.11 - Key squares"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.11 - Key squares"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/2RlUfCgy"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/8/8/3PK3/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ #Key squares when the pawn has not reached the 5th rank.
+
+"If the pawn has not reached the 5th rank, its key squares are two ranks ahead."
+
+For example, for a pawn on the 4th rank, the key squares are on the 6th rank; in the diagram, c6, d6 and e6. But the rule still applies: if the white king occupies one, the pawn promotes. The key squares for a pawn on the 5th rank are the same as on the 4th rank. For a pawn on the 2nd or 3rd rank that rule (the key squares are two ranks ahead) is still valid. That is, for a d3 pawn, the key squares would be e5, d5 and c5; for a d2 pawn, e4, d4 and c4.
+
+In the diagram position, the white king easily reaches one of the key squares, but sometimes opposition plays a role, causing the fight for the squares to be harder.
+1. ♔d5! } { [%csl Bc6,Bd6,Be6,Ge4][%cal Ge4d5] }
+1. Kd5 { Heading for the key square c6.
+1.Ke5 ?? would be a mistake: in the position after1...Ke7 opposition would be useful in the standard way: it prevents the enemy king from going further, in this case, from reaching the key squares } { [%csl Bc6,Bd6,Be6] } 1... Ke7 { 2. ♔c6 } { [%csl Gd5][%cal Gd5c6] } 2. Kc6 { Once White has occupied one of the key squares, the pawn promotes; we already know the procedure. } { [%csl Bc6,Bd6,Be6][%cal Bd4d8] } 2... Kd8 { 3. ♔d6 } { [%csl Gc6][%cal Gc6d6] } 3. Kd6 { [%csl Gd6,Rd8] } 3... Kc8 { 4. ♔e7 } { [%csl Gd6][%cal Gd6e7] } 4. Ke7 { [%cal Bd4d8] } 4... Kc7 { 5. d5 } { [%cal Gd4d5] } 5. d5 Kc8 { 6. d6 } { [%cal Gd5d6] } 6. d6 Kb7 { 7. d7 } { [%cal Gd6d7] } 7. d7 { Trying to analyse what would have happened if Black were to move in the starting position is a simple and interesting Exercise. } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/csbR5ONS"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "5k2/8/8/8/3PK3/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Kd5 Ke7 2. Kc6 Kd8 3. Kd6 Kc8 4. Ke7 Kc7 5. d5 Kc8 6. d6 Kb7 7. d7 *
+
+
+[Event "100 Endgames You Must Know: Position 1.12 - Key squares"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.12 - Key squares"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/ecEengax"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/1kp5/8/8/8/K7 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ ## The distant opposition ##
+In the diagram position the fight for the key squares is tougher. We already know that, for a 4th-rank pawn, the key squares are two ranks ahead; in this case, b3, c3 and d3 (marked in the diagram) .
+
+We also know that opposition prevents the enemy king from going further, so if the strong king reaches the 4th rank and then his counterpart takes the opposition from the 2nd rank, the former will not make progress or occupy the key squares. However, if the white king moves to the 2nd rank, it is Black who takes the opposition. What to do then ? Sometimes we can succeed thanks to the so-called distant opposition.
+
+1. ♔b1! } { [%csl Yb3,Yd3,Yc3][%cal Ga1b1] }
+1. Kb1 { When both kings are on the same file separated by an odd number of squares (3 or 5), we talk about distant opposition. This is an effective way to restrict the enemy king's progress. For example, in this case the black king can gain a rank, but no more, as then his white counterpart will oppose him, taking the direct opposition. Thus the white king prevents him from advancing two ranks and getting to the key squares.
+It is interesting to note that Black cannot win, even if it were again White's turn. Distant opposition can be lost, the same as direct opposition (see Position 1.7), if some squares are out of reach. Now White would play Kc1 and Black would lose the opposition because ... Kc5 is impossible. } { [%csl Gb1,Bb5,Yb3,Yc3,Yd3] } 1... Kb4 { If 1...Kc4, then 2.Kc2, always taking the opposition and hindering progress. } { [%csl Gb1][%cal Gb1b2] } 2. Kb2 { Immediately taking the direct opposition, thus preventing the king from reaching the key squares. } { [%csl Gb2,Rb4,Bb3,Bc3,Bd3] } 2... c4 { 3. ♔ c2 } { [%csl Gb2][%cal Gb2c2] } 3. Kc2 c3 { 4. ♔ c1 } { [%csl Gc2][%cal Gc2c1] } 4. Kc1 Kb3 { 5. ♔b1 } { [%csl Gc1][%cal Gc1b1] } 5. Kb1 c2+ { 6. ♔c1 } { [%csl Gb1][%cal Gb1c1] } 6. Kc1 Kc3 { Draw } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/VHCxV3OP"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/1kp5/8/8/8/K7 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Kb1 Kb4 2. Kb2 c4 3. Kc2 c3 4. Kc1 Kb3 5. Kb1 c2+ 6. Kc1 Kc3 *
+
+
+[Event "100 Endgames You Must Know: Position 1.13 - Key squares"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.13 - Key squares"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/XImDAmby"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/6k1/8/6K1/8/6P1/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ ## Using reserve moves ##
+Remember that the key squares for a 3rd-rank pawn are two ranks ahead. Thus, here the key squares are f5, g5 and h5. The white king is already there, so White should win, but how to outflank the opposing king?
+
+This is possible thanks to a reserve move with the pawn.
+1. g4 } { [%csl Gg3][%cal Gg3g4] }
+1. g4 { As the kings are opposed, White pushes the pawn, giving Black the move. Thus the white king will reach the new key squares on the following move. } { [%csl Gg5,Rg7] } 1... Kh7 { 1...Kf7 2.Kh6 would not change matters.
+2. ♔f6 } { [%csl Gg5][%cal Gg5f6] } 2. Kf6 { Now the king has occupied the key squares for the pawn on the 4th or even the 5th rank. Thus, the pawn could go that far, but there is an easier way. } 2... Kh8 { 3. ♔g6
+2...Kh6 3.g5+ Kh7 4.Kf7
+2...Kg8 3.Kg6 Kf8 4.Kh7 and the pawn's path is clear. } { [%csl Gf6][%cal Gf6g6] } 3. Kg6 Kg8 { The black king takes the opposition again, but once more White has a reserve move. } { [%csl Gg4][%cal Gg4g5] } 4. g5 Kh8 { 5. ♔f7 } { [%csl Gg6][%cal Gg6f7] } 5. Kf7 { And the pawn promotes straight away: } { [%cal Bg5g8] } 5... Kh7 { 6. g6+ } { [%csl Gg5][%cal Gg5g6] } 6. g6+ Kh6 { 7. g7 } 7. g7 { 1 - 0. } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "1-0"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/bYSQBRHn"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/6k1/8/6K1/8/6P1/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. g4 Kh7 2. Kf6 Kh8 3. Kg6 Kg8 4. g5 Kh8 5. Kf7 Kh7 6. g6+ Kh6 7. g7 1-0
+
+
+[Event "100 Endgames You Must Know: ENDING 4 (Position 1.14) - The rook's pawn. Defending king in front of the pawn"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 4 (Position 1.14) - The rook's pawn. Defending king in front of the pawn"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/VvgpwNJ4"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/8/8/6kp/8/6K1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ So far, everything we have said is valid for all pawns with the exception of the rook's pawn, which deserves special attention.
+
+In a pawn ending, the rook's pawn is the most difficult to promote. It requires its path to be clear. The reason is the possibility of a stalemate when the pawn reaches the 7th rank supported by the king, no matter from where. This new situation renders useless all our rules about the range, the opposition and the key squares stated in the previous endings.
+
+In this position it doesn't matter who is to move: this is always a draw.
+1. ♔h1 } { [%csl Gg1][%cal Gg1h1] }
+1. Kh1 { White loses the opposition, but no matter: there is a stalemate. } 1... h2 { Stalemate.
+Conclusion: With a rook's pawn, if the defender's king stands on the way, it is a draw. } *
+
+
+[Event "100 Endgames You Must Know: Position 1.15 - The rook's pawn. Defending king in front of the pawn"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Position 1.15 - The rook's pawn. Defending king in front of the pawn"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/ZgFYTN39"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/7p/7p/7p/7p/6kp/7p/6K1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+
+{ ### Quantity is not quality ###
+
+Though we are studying single-pawn endings, exceptionally I will show you this diagram-an imaginary position, it cannot be reached in an actual game! - to illustrate the idea that there is little hope of promoting a rook's pawn.
+
+We can see here that if the defending king stands in the pawn's path, not even 6 rook's pawns are enough to win. }
+1. Kh1 { [%csl Gh1,Rh2,Rh3,Rh4,Rh5,Rh6,Rh7] } 1... Kf3 2. Kxh2 Kg4 3. Kh1 Kg3 4. Kg1 h2+ { What else ? } 5. Kh1 Kg4 6. Kxh2 h3 7. Kh1 Kg3 8. Kg1 h4 9. Kh1 h5 10. Kg1 h6 11. Kh1 Kf3 12. Kh2 Kg4 13. Kh1 Kg3 14. Kg1 h2+ 15. Kh1 { And again the only way to avoid stalemate is giving up the pawn and so either we lose all pawns or we cannot advance them. } *
+
+
+[Event "100 Endgames You Must Know: ENDING 5 (Position 1.16) - Imprisoning the stronger side's king"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 5 (Position 1.16) - Imprisoning the stronger side's king"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/jJH7m1xe"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/p7/8/1k6/3K4/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Unfortunately for the strong side, standing in the pawn's path is not the only way for the defender to draw this ending. The vicinity of the edge of the board can also dramatically restrict the mobility of the stronger side's king.
+
+In the diagram position Black threatens 1... Kb2, securing the pawn's path to promotion. But it is White's turn:
+1.♔c1! } { [%csl Rc2,Rc1,Gd2][%cal Gd2c1] }
+1. Kc1 { Preventing 1... ♔b2 and threatening 2. ♔b1. } { [%csl Bc2,Bc1][%cal Bc1b1] } 1... Ka2 { The only way to prevent the white king from getting in the pawn's way. However, after this move the black king loses his mobility and will not be able to let his pawn advance.
+1...a4 2.Kb1 a3 leads to a well known drawn position. } { [%csl Gc1][%cal Gc1c2] } 2. Kc2 a4 { . } { [%csl Gc2][%cal Gc2c1] } 3. Kc1 a3 { . } { [%csl Gc1][%cal Gc1c2] } 4. Kc2 Ka1 { . } { [%csl Gc2][%cal Gc2c1] } 5. Kc1 { Nothing can be done. The king cannot get out and, if Black pushes the pawn, his king is stalemated.
+This is so clear that we could add many doubled rook's pawns to the diagram and still Black could not win.
+Conclusion: In order to draw against a rook's pawn, placing the King in front of the pawn is enough, but occupying one of the two nearest squares on the bishop's file also works. In this example, the c1 and c2-squares. } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/LeTOQVK6"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/p7/8/1k6/3K4/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Kc1 Ka2 2. Kc2 a4 3. Kc1 a3 4. Kc2 Ka1 5. Kc1 *
+
+
+[Event "100 Endgames You Must Know: ENDING 6 (Position 1.17) - Rook vs. Bishop - The wrong corner"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 6 (Position 1.17) - Rook vs. Bishop - The wrong corner"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/1uosa1g8"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "6k1/5R2/6K1/8/8/8/8/6b1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ The ending Rook vs. Bishop is usually a draw. However, the defender has to be careful with some positions when the king is pushed to the edge of the board. This is especially dangerous when the king is pushed to the wrong corner.
+" In a Rook vs. Bishop ending, the wrong corner is the corner of the same colour as the squares on which the bishop moves. "
+In the diagram position, the black king cannot move away from the corner and Black loses, no matter where the bishop is
+1. ♖f1 } { [%csl Gf7,Yh8,Yg1][%cal Gf7f1] }
+1. Rf1 { The winning plan is to force the bishop out of its safe place behind the white king, thus winning time to threaten checkmate on the 8th rank.
+1.Rb7 ?? threatening mate would be a gross mistake: after1...Kf8 the black king cannot be forced back to the wrong corner. } { [%csl Rg1] } 1... Bh2 { Trying to stay in the safe zone, but there are not enough squares, as we will see in three moves. Other moves lose quickly. For instance:
+1...Bd4 2.Rd1 Bb6 3.Rb1 Bc7 4.Rc1 and Black cannot hinder the 8th-rank check any more. } { [%csl Gf1][%cal Gf1h1] } 2. Rh1 Bg3 { . } { [%csl Gh1][%cal Gh1g1] } 3. Rg1 Bh2 { . } { [%csl Gg1][%cal Gg1g2] } 4. Rg2 { The rook takes control over two of the safe squares; a discovered check with the king mines a third one (the f4-square) . Therefore, the bishop is forced out to open field, and the white rook can exploit its position to win a decisive tempo. } { [%csl Rh2,Gg2,Re5,Rg6,Rf4][%cal Gg2g3,Gg2h2,Rg6f5] } 4... Bd6 { 4...Bf4 5.Kf5+ +- } { [%csl Gg2][%cal Gg2d2] } 5. Rd2 { [%csl Rd6,Rd8,Gd2][%cal Gd2d8] } 5... Be7 { . } { [%csl Gd2][%cal Gd2c2] } 6. Rc2 { 6.Rd7? Kf8 draws. } 6... Bf8 { . } { [%csl Gc2][%cal Gc2c8] } 7. Rc8 { and Black is checkmated. } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/ctFnklp2"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "6k1/5R2/6K1/8/8/8/8/6b1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Rf1 Bh2 2. Rh1 Bg3 3. Rg1 Bh2 4. Rg2 Bd6 5. Rd2 Be7 6. Rc2 Bf8 7. Rc8 *
+
+
+[Event "100 Endgames You Must Know: ENDING 7 (Position 1.18) - Rook vs. Bishop - The right corner"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 7 (Position 1.18) - Rook vs. Bishop - The right corner"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/X8hx69yf"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "7k/R7/7K/8/8/1b6/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ The other corner is a completely different story. It is so easy to defend this ending from the right corner that going there straight away is a perfectly sound idea.
+
+The black king stands in the corner, while the bishop is ready to interpose on g8 in case of a check. Then White would have to let the bishop move to avoid stalemate, and the position would be repeated. There are no serious winning chances. }
+1. Ra8+ { . } { [%csl Gb3][%cal Gb3g8] } 1... Bg8 { Now either the rook or the king must release the pressure on the enemy pieces to avoid stalemate. } { [%csl Gg8,Gh8] } 2. Ra7 { . } { [%csl Gg8][%cal Gg8b3] } 2... Bb3 { [%csl Gb3][%cal Gb3g8,Gb3c2] } 3. Kg6 { 3.Rh7+ Kg8 4.Rb7 Bd5 The bishop always has enough squares at its disposal along the a2-g8 diagonal. } { [%csl Gb3][%cal Gb3c4] } 3... Bc4 { The only concern for the defender is that his bishop has enough distance to check the enemy king from the b1-h7 diagonal if necessary.
+3...Be6?? would be bad due to 4.Rh7+ Kg8 5.Re7 winning. The position is safe once this danger is averted. } { [%csl Gc4][%cal Gc4d3] } 4. Rh7+ { . } { [%csl Gh8][%cal Gh8g8] } 4... Kg8 5. Rc7 { . } { [%csl Gc4][%cal Gc4d3] } 5... Bd3+ 6. Kh6 { . } { [%csl Gd3][%cal Gd3e4] } 6... Be4 { = } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/p5tJWfLR"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "7k/R7/7K/8/8/1b6/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Ra8+ Bg8 2. Ra7 Bb3 3. Kg6 Bc4 4. Rh7+ Kg8 5. Rc7 Bd3+ 6. Kh6 Be4 *
+
+
+[Event "100 Endgames You Must Know: ENDING 8. (Positions 1.19 & 1.20) - Rook vs. Knight - At the edge of the board"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 8. (Positions 1.19 & 1.20) - Rook vs. Knight - At the edge of the board"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/xUaLo6uY"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/8/8/3k4/r7/3NK3 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ When fighting against a rook, the knight may have more trouble than the bishop. Nevertheless, most positions are drawn. In this ending, keeping the knight close to the king is the best policy. If the knight is separated from the king, it can be lost.
+
+No problems for White, though both the king and the knight have been driven to the edge of the board. Not so when they are in the corner. Moreover, this position has great theoretical importance, as it usually occurs as a result of a Rook vs. Pawn endgame, as we will see in the corresponding section.
+
+When the knight and the king are together on the edge, moves are usually forced, but then there is a lower risk of blundering. The knight should not be separated from the king in any circumstances, though this does not necessarily imply an automatic defeat. The first move is clearly forced.
+♘f2 + } { [%csl Gd1][%cal Gd1f2] }
+1. Nf2+ Ke3 { The next move is also forced, following the rule of keeping together knight and king, although the check on g4 does not lose here. } { [%csl Gf2][%cal Gf2d1] } 2. Nd1+ Kf3 { Now White has two options that may lead to the same position some moves later. } { [%csl Gd1][%cal Gd1c3] } 3. Nc3 { 3.Kf1 Re2 4.Nc3 and either the king or the knight will return on the next move. This is the only case when the king and the knight are separated for a moment. } { [%csl Bc3][%cal Bc3a2] } 3... Rc2 { . } { [%csl Gc3][%cal Gc3d1] } 4. Nd1 Re2+ { The only way to divide the white army, but just for a moment. } { [%csl Ge1][%cal Ge1f1] } 5. Kf1 Rh2 { . } { [%csl Gf1][%cal Gf1e1] } 6. Ke1 { The king comes back immediately. } 6... Rc2 { [%csl Ge1][%cal Ge1f1] } 7. Kf1 { = } *
+
+
+[Event "100 Endgames You Must Know: TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/QXSZeUpD"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/8/8/3k4/r7/3NK3 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. Nf2+ Ke3 2. Nd1+ Kf3 3. Nc3 Rc2 4. Nd1 Re2+ 5. Kf1 Rh2 6. Ke1 Rc2 7. Kf1 *
+
+
+[Event "100 Endgames You Must Know: ENDING 9 (Position 1.21) - Rook vs. Knight - In the corner"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "ENDING 9 (Position 1.21) - Rook vs. Knight - In the corner"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/2SJosDMx"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/8/8/6k1/r7/6NK w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Things are radically different when the king and the knight are at one corner of the board, no matter who occupies the corner-square. Their mobility is then restricted and the position becomes immediately lost. Even if the knight occupies the g2-square (an especially unfortunate square for the knight) most cases result in a defeat.
+
+There is no need for a deep analysis and it does not matter which side is to move: in all these positions (1.21, 1.22 and 1.23) White loses the knight straight away.
+
+The third diagram is specially impressive: the knight is not even on the edge of the board, but it is lost anyway. This is our first example of a 'knight's dumb square' and its effects, but it will not be the last.
+Conclusion: In the battle Knight vs. Rook there are two scenarios the defender should avoid:
+1) The knight is separated from the king
+2) Both pieces are trapped in the corner ( even if the knight is on the g2-square ) . }
+ *
+
+
+[Event "100 Endgames You Must Know: Positions 1.24 & 1.25 - Kamsky vs. Bacrot - Sofia 2006"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Positions 1.24 & 1.25 - Kamsky vs. Bacrot - Sofia 2006"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/T9KIl6U4"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/8/8/5K2/7R/4nk2 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+
+{ I have presented here a Rook vs. Knight ending because the basic ideas are 1 simple and 2 a must for all players.
+
+It is true, though, that the trapping phase can sometimes be complicated. Also, some positions with the king and the knight on the edge require an accurate defence, although those cases follow the general rule that the defender only loses if one of the pieces is in the corner. }
+1. Kg3 { When I was rounding off this book, two top players played a surprising endgame whose result amazed everyone who likes studying chess (or so I thought) . It is a remarkable ending, because it contains the ideas shown in the previous two endings and illustrates the difficulties of certain positions when the king and the knight are on the edge. } 1... Nd3 { Therefore, I thought it was worth including it here although, due to its complexity, I do not recommend learning it by heart, like the previous ones. I will not comment in detail on all possible lines for the same reason. } 2. Rd2 { Bacrot had reached this position after an accurate defence of first a Rook + Pawn vs. Rook+ Pawn, and then a Rook+ Pawn vs. Rook ending (see Question 28 in the Final Test) . He has just promoted to a knight, which, as we shall see in Ending 23, is the standard way of saving these positions. Now he has a supposedly well known drawn ending. } 2... Ne1 { I assumed that at this point he relaxed, and he was probably in time trouble.
+Nevertheless, there is a special circumstance, which is interesting for us from a theoretical point of view: the knight is 'within range' of its dumb square
+g2
+and the king is placed on the knight's side next to that square. Defending this ending is somewhat difficult } 3. Rf2+ Kg1 4. Rf8 { So far everything has been forced. Now Black's troubles start. The knight must go to the dumb square or move away from the king. } 4... Ng2 5. Kf3 Kf1 { Actually, this is the losing move. That should not be surprising: with the knight on the g2-square, the defender is very likely to lose. The correct defence, not easy to find, was
+5...Nh4+ 6.Ke3 Kg2 7.Rg8+ Kh3 8.Ke2 Kh2 = and in practice Black has managed to return to the starting position } (5... Nh4+ 6. Ke3 Kg2 7. Rg8+ Kh3 8. Ke2 Kh2 { and in practice Black has managed to return to the starting position. }) 6. Kg3+ { Kamsky misses his first chance to win: 6.Rf7 ! } 6... Kg1 7. Kf3 Kf1 8. Rf7 { An amazing zugzwang position. } 8... Ne1+ 9. Ke3+ Kg1 10. Ke2 Ng2 11. Rh7 Nf4+ 12. Kf3 Nd3 13. Rh4 Ne5+ 14. Ke2 { Just an example of how difficult this stage is, we already know from Position 1.20. 14.Ke3! +- } 14... Kg2 15. Re4 Nf7 16. Re7 Nd6 17. Rg7+ Kh3 18. Kf3 Kh4 19. Kf4 Kh5 20. Re7 Nc4 21. Re6 Nd2 22. Rc6 Nb3 23. Ke3 Kg4 24. Rc4+ Kg3 25. Rc3 Na5 26. Ke4+ Kf2 27. Kd5 Nb7 28. Rb3 Nd8 29. Rb8 { 1 - 0. } { [%csl Rb7,Rc6,Re6,Rf7][%cal Gb8b7,Gd5c6,Gd5e6,Bb8f8] } *
+
+
+[Event "100 Endgames You Must Know: Chapter 2 - BASIC TEST"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Chapter 2 - BASIC TEST"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/5M5wPxth"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/4k3/8/4K3/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ ####### CHAP. 2 - TESTES BÁSICOS #######
+
+"NEXT CHAPTER" }
+ *
+
+
+[Event "100 Endgames You Must Know: Exercise 1"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "From Position"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 1"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/3RiuG1js"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/K7/N7/8/7p/7k/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Is it a draw ? }
+1. Nc4 { Yes! } 1... Kg2 2. Ne3+ Kf2 3. Ng4+ { The White Knight enters the right circuit.
+1/2 - 1/2. } { [%cal Gg4e3,Gg4h2,Ge3f1] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 2"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 2"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/0jIQgFOn"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/K7/8/8/5N1p/7k/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Black to move. Is it a draw ? }
+1... Kg2 { No. } { [%csl Rf3][%cal Gg2f3,Bh3h1] } (1... Kg3 { Também funciona. }) 2. Ne1+ Kg3 { The pawn promotes.
+0 - 1 } { [%cal Gg3f3,Gg3g2,Bh3h1] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 3"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 3"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/wlXhsMLB"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "7Q/8/8/3K4/8/8/2pk4/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Is it a draw ? }
+1. Qd4+ { No, because the King is inside the winning zone. } 1... Ke2 2. Qc3 Kd1 3. Qd3+ Kc1 4. Kc4 Kb2 5. Qb3+ Ka1 6. Qc3+ (6. Qxc2 { Rei afogado. Empate }) 6... Kb1 7. Kb3 c1=Q 8. Qd3+ Ka1 9. Qa6+ Kb1 10. Qa2# { Mate! } *
+
+
+[Event "100 Endgames You Must Know: Exercise 4"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 4"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/G3XSsK7b"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "4k3/R7/5K2/4P3/8/8/8/1r6 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1... Re1 { Since it is impossible to get to Philidor's position, Black tries Kling and Horwitz, other moves lose. See Ending 56.
+1/2 - 1/2 } { [%csl Ge1][%cal Ge1e5] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 5"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 5"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/nTaESBYI"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/2K5/8/8/3kN3/8/7p/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. What should you play and with which result ? }
+1. Nf2 { Setting up a barrier. } { [%csl Re5,Re4,Re3,Rd3] } 1... Kc3 { [%csl Bd4,Be3,Be5,Bf2,Bh2][%cal Rd4e5,Bd4e3,Bf2g4] } 2. Kd6 Kd2 3. Ke5 Ke2 4. Nh1 Kf3 5. Kd4 { [%cal Gd4f2] } 5... Kg2 6. Ke3 Kxh1 7. Kf2 *
+
+
+[Event "100 Endgames You Must Know: Exercise 6"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 6"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/tmqmD2Om"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "3b4/8/2K5/1P6/3B4/8/4k3/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Black to move. Is it a draw ? }
+1... Kd3 { Yes: The Black King takes the rear opposition. } 2. Bb6 Bg5 { [%cal Gg5e3,Gg5d8] } 3. Bc7 Be3 { [%cal Ge3b6] } 4. Bd6 Kc4 { [%cal Gc4c5,Ge3b6] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 7"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 7"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/jfrldGAm"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/7K/6P1/8/6k1/2b5/8/2B5 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Is it a draw ? }
+1. Bh6 { [%cal Bh6g7] } 1... Kh5 { Procure o melhor lance para as brancas. } 2. Bg7 Bd2 { Procure o melhor lance para as brancas. } 3. Bd4 Bh6 { Procure o melhor lance para as brancas. } 4. Bc3 Bf8 { Procure o melhor lance para as brancas. } 5. Bd2 Kg4 { Procure o melhor lance para as brancas. } 6. Bh6 { White wins because the h6-f8 diagonal has just 3 squares. } { [%cal Bg6g8,Gf8h6,Gh6f8] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 8"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 8"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/V9DV5H0u"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/5k2/8/1b2PP2/4K3/8/3B4/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Black to move. Is 1... Bc4 a good or a bad move ? Or is it irrelevant ? }
+1... Bd7 { 1...♗c4? é um erro. } 2. Bg5 Bc8 { [%csl Rf5][%cal Gc8f5] } 3. Kf4 Bd7 { [%csl Rf5][%cal Gd7f5] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 9"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 9"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/sBOVUXQq"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/1PbB4/8/6k1/4K3/5P2/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Is it a draw ? }
+1. Bc8 { Procure a melhor jogada para as pretas. } 1... Bh2 { It is a draw: the Black Bishop controls both enemy pawns from the same diagonal and the blockade cannot be lifted. } { [%csl Rf4,Rb8][%cal Gh2b8] } (1... Bf4 { Alternative. }) (1... Bg3 { Alternative. }) *
+
+
+[Event "100 Endgames You Must Know: Exercise 10"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 10"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/XmeCA7ZJ"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/6k1/p5p1/8/8/1B3K2/3b4/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Black to move. Is it a draw ? }
+1... Kf6 { No. Black wins: his pawns are too far apart for the defender to cope. } (1... a5 { Correto. Agora encontre uma outra jogada vencendora. }) *
+
+
+[Event "100 Endgames You Must Know: Exercise 11"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 11"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/L2XSKfn8"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "3R4/4K3/8/8/3pk3/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. What should you play and with which result ? }
+1. Kd6 { White wins by outflanking his opponent. } { [%cal Bd6c5,Bc5c4] } 1... d3 2. Kc5 Ke3 3. Kc4 { [%csl Gd8,Rd3][%cal Gd8d3] } 3... d2 4. Kc3 { [%csl Rd2][%cal Gd8d2] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 12"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 12"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/qMbY9CYs"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "R7/8/8/8/8/pk1K4/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Black to move. Is it a draw ? }
+1... Kb2 { sim, está empatado. } { [%csl Ya3][%cal Ya3a1] } 2. Rb8+ { Procure a melhor jogada para as pretas. } 2... Kc1 { [%cal Gc1c2,Gc1d2,Ya3a1] } 3. Ra8 { Procure a melhor jogada para as pretas. } 3... Kb2 4. Kd2 { Procure a melhor jogada para as pretas. } 4... a2 5. Rb8+ { Procure a melhor jogada para as pretas. } 5... Ka1 { [%csl Ga1][%cal Rb8b1] } 6. Kc2 { Stalemate. } *
+
+
+[Event "100 Endgames You Must Know: Exercise 13"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 13"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/0xMBq5a7"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "R7/4k3/P7/8/8/8/6K1/r7 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Can he win ? }
+1. a7 Kf7 2. Rh8 { [%csl Rf7,Ya7][%cal Bh8h7,Gh7a7,Ba1a7] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 14"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 14"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/6Aaicqxs"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/3K4/8/8/8/4p3/2Pk4/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Is it worth playing on ? }
+1. c4 { As brancas empatam. } 1... e2 { Procure o melhor lance para as brancas. } 2. c5 e1=Q { Procure o melhor lance para as brancas. } 3. c6 { Black has no checks and the White pawn reaches the 7th rank. See ending 18 for an example of how this is drawn.
+1/2 - 1/2 } { [%csl Rd2] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 15"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 15"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/b3mK0vp5"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/3Pk3/8/1K3P2/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Can he win ? }
+1. Kc6 { Yes. } 1... Kd8 2. Kd5 Kxd7 { 1 - 0 } { [%cal Gd7e8,Gd5e6,Bd5d6,Bd7d8] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 16"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 16"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/2jYOB07H"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/3p4/5k2/3P4/8/2K5 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. What should he do and with which result ? }
+1. d4 Ke4 2. Kc2 Kxd4 3. Kd2 { 1/2 - 1/2 } { [%csl Gd2,Rd4] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 17"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 17"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/JcaCu5B3"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "7K/8/8/8/8/2p4N/8/2k5 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Can he draw ? }
+1. Nf4 { Yes, by finding the right circuit for the Knight. } 1... c2 2. Ne2+ Kd2 3. Nd4 { 1/2 - 1/2 } { [%cal Bd4b3,Bc2c1,Rd4c2] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 18"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 18"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/sPXmnRv4"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "2k5/8/8/8/6P1/8/8/4K3 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Can he win ? }
+1. Kf2 { This is the only way to reach the key squares. } { [%csl Bf6,Bg6,Bh6][%cal Bf2h4] } 1... Kd7 2. Kg3 Ke6 3. Kh4 Kf6 4. Kh5 Kg7 5. Kg5 { [%csl Gg5,Rg7] } 5... Kf7 6. Kh6 { 1 - 0. } { [%csl Bh6,Bg6,Bf6] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 19"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 19"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/H5LAStyP"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/6P1/8/8/5K2/8/6k1/7q w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+1. g8=Q+ { What is the correct result ? } 1... Kf1 { Draw.
+1/2 - 1/2 } *
+
+
+[Event "100 Endgames You Must Know: Exercise 20"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 20"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/Gb8ZHOmq"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "1r6/8/8/8/1P1k4/K7/8/7R w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Can he win ? }
+1. Rh5 { Yes, by cutting the King off.
+See Ending 62.
+1.Rc1 Kd5 = See Ending 59. } { [%csl Rd4][%cal Yh5a5] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 21"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 21"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/l9CnCQiZ"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/8/3kp3/8/8/8/3K4 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. What is the correct result ? }
+1. Ke1 { [%csl Rd5,Ge1][%cal Ge1d2,Gd5d4,Be1e2,Bd5e4] } 1... Ke4 2. Ke2 { [%csl Ge2,Re4] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 22"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 22"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/Tlv9yRzS"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/1k5p/8/1P5P/1K6/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Can he win ? }
+1. h5 { 1 - 0.
+See Ending 83.
+1.Kc4 h5 = } { [%csl Gh5] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 23"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 23"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/W6B3bFNs"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/2k4B/4K3/4N3/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Suppose you have already spent 30 of your 50 moves to get here. It is time to be accurate. What would you do ? }
+1. Nd7 { Also winning in less than 20 moves are the moves Bc2 and Kd5; but the text move is pure tactics. } { [%csl Rd7,Rb6,Rc5,Rd5,Rd6,Re7,Rf8][%cal Bh7d3] } (1. Bc2 { Também vence em menos de 50 lances. }) (1. Kd5 { Também vence em menos de 50 lances. }) 1... Kc6 2. Bd3 { Closing off the way out. } { [%csl Rb6,Ra6,Rb5,Rd6,Rc5,Rd5,Rd7,Re7,Rf7,Rf8] } 2... Kc7 3. Bb5 { [%csl Ra6,Rb6,Rc6,Rd6,Rd7,Re7,Rf8,Rf7] } 3... Kd8 4. Nf6 { [%csl Re8,Re7,Rd7,Rd6,Rc6,Ra6] } 4... Kc7 5. Nd5+ { Building the cage. } { [%csl Rc6,Rd6,Rd7,Rb6,Ra6,Re7,Re8] } 5... Kd8 6. Kd6 { [%csl Rc7,Rd7,Re7,Re8,Rc6,Ra6,Rb6] } 6... Kc8 7. Ke7 { [%csl Rd8,Rd7,Re8,Rc7,Ra6,Rb6,Rc6] } 7... Kb7 8. Kd7 { [%csl Rc8,Rc7,Rb6,Rc6,Ra6] } 8... Kb8 9. Ba6 { [%csl Rb7,Rc8,Rc7,Rb6,Ra6] } 9... Ka7 10. Bc8 { [%csl Ra6,Rb7,Rb6,Rc7,Rc8] } 10... Kb8 11. Nb4 { [%csl Rc6,Ra6,Rb7,Rc7] } 11... Ka7 12. Kc7 { [%csl Ra6,Rb7,Rb8,Rb6] } 12... Ka8 13. Bb7+ { [%csl Rb8,Rb7,Rb6,Ra6] } 13... Ka7 14. Nc6# { Mate. See Ending 93. } *
+
+
+[Event "100 Endgames You Must Know: Exercise 24"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 24"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/HWy6wqPp"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/4KP1q/8/8/3k4/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ White to move. Can he draw ? }
+1. Kf6 { Yes, because the Black King is out of the winning zone, but White needs to find the only and paradoxical move 1. ♔f6! =.
+1/2 - 1/2 } { [%cal Bf7f8] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 25"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 25"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/8Z2fYNBi"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/5R2/K7/8/5pk1/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Black to move. Can he draw ? }
+1... Kf3 { Yes, Black draws if he knows the 'shoulder-charging' idea (Ending 24) .
+1...f3 ? Loses. 2.Kb5 Kg3 3.Kc4 f2 4.Kd3 Kg2 5.Ke2 And White arrives in time; we will see this rule in Ending 21. } { [%csl Yd2,Yd3,Yd4,Ye4][%cal Gf4f1,Bf3e3] } 2. Kb5 Ke3 { [%csl Gd2,Gd3,Gd4,Ge4] } 3. Kc4 f3 { [%csl Ge4,Gd4,Gd3,Gd2] } 4. Re7+ Kd2 { [%csl Gd3,Gc3,Gc2,Ge3][%cal Bf3f1] } *
+
+
+[Event "100 Endgames You Must Know: Exercise 26"]
+[Date "2020.12.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "100 Endgames You Must Know"]
+[ChapterName "Exercise 26"]
+[ChapterURL "https://lichess.org/study/Aq49nFJC/ophHimaT"]
+[Annotator "https://lichess.org/@/Raoni"]
+[FEN "8/8/3Q1p2/1q1P4/3k4/3p4/8/2K5 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2020.12.23"]
+[UTCTime "22:46:00"]
+[ChapterMode "gamebook"]
+
+{ Black to move. Would you trade Queens on c5 to win? }
+1... Qc4+ { No. White can keep the opposition. 1... Qc4+ wins.
+1...Qc5+ 2.Qxc5+ Kxc5 3.Kd2 Kd6 4.Ke3! Ke5 5.Kd2 ! Keeping the opposition is more important than taking a pawn.5...Kd6 6.Ke3 Kxd5 7.Kxd3 =
+Suba - Huerga, Benidorm 2007. } { [%cal Bd3d2,Bc4c3,Bc4b3] } *
+
+

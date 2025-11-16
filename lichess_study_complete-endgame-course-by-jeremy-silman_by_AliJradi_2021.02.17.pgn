@@ -1,0 +1,252 @@
+[Event "Complete Endgame Course - by Jeremy Silman: Introduction"]
+[Date "2021.02.17"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Introduction"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/Ohb7Xuql"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[UTCDate "2021.02.17"]
+[UTCTime "12:36:10"]
+
+{ This study is based on the book "The Complete Endgame Course" by Jeremy Silman.
+
+"All chess players need endgame skills, but doing the work to achieve this much-needed knowledge is anything but easy. My goal in writing this book was to take a subject that most see as boring and make it palatable, educational, and yes, even fun."
+- Jeremy Silman
+
+This study contains endgames for all ratings starting from new to chess, and gradually moving to more advanced endgames. }
+ *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Overkill mates: Staircase/Ladder Mate (Two major pieces vs Lone King)"]
+[Date "2021.02.17"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Overkill mates: Staircase/Ladder Mate (Two major pieces vs Lone King)"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/ZV78wRoy"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/3k4/8/8/3K4/5Q2/6R1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.02.17"]
+[UTCTime "12:55:37"]
+
+{ The easiest way to deliver checkmate when you are up by two major pieces (queen or rook) is to force the enemy king to one side of the board using a concept known as the staircase. } { [%csl Gf5][%cal Gf2f5,Gf5a5,Gf5h5] }
+1. Qf5 { We start by cutting the king off from a rank or file. The queen prevents the king from advancing to the fifth rank. } 1... Kc6 2. Rg6+ { Using the other major piece, we check the king off the next rank or file. } 2... Kc7 3. Qf7+ { Now the rook stops the king from moving forward, so we use the queen to force the king to the last rank } 3... Kd8 4. Rg8# { Now that the king can't come to the seventh rank, we use the rook to deliver mate.
+Same concepts apply with two rooks(or two queens). } *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Overkill mates: Two Rooks Mate- (interactive lesson)"]
+[Date "2021.02.17"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Overkill mates: Two Rooks Mate- (interactive lesson)"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/3vmKdWYH"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/8/8/8/4k3/6R1/6RK w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.02.17"]
+[UTCTime "13:07:26"]
+[ChapterMode "gamebook"]
+
+{ The plan is to take files/ranks away from the enemy king while pushing it to one side of the board.
+Keep your rooks as far from the enemy king as possible.
+Keep in mind that this not the fastest way to deliver mate, it's merely the easiest. } { [%csl Ge1][%cal Gg1e1] }
+1. Re1+ { Now the king can't cross the e-file since it's controlled by the rook. } 1... Kd3 { Move your g-rook far from the enemy king. } (1... Kf3 2. Rg8) 2. Rg8 (2. Rg7 Kd2) 2... Kd2 { Now your rook on e1 is attacked, move it far away from the enemy king. } 3. Re7 (3. Ree8 { It's true that it's preferred to keep the rooks far away from the enemy king, but the rook now blocks the other rook on g8, and it prevents us from creating the staircase. }) 3... Kd3 { Force the black king to the left. } 4. Rd8+ Kc4 5. Rc7+ Kb5 6. Rb8+ Ka6 { Prepare for the checkmate by moving the rook on c7 to a safe square where it can deliver the checkmate in the next moves. } 7. Rc1 Ka7 { Now move the attacked rook to a safe square far away from the enemy king. } 8. Rb2 Ka6 9. Ra1# *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Overkill mates: Queen Mate"]
+[Date "2021.02.17"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Overkill mates: Queen Mate"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/tbysSZDg"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/8/3k4/8/8/8/6QK w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.02.17"]
+[UTCTime "13:35:11"]
+[ChapterMode "gamebook"]
+
+{ Trap the enemy king to one side of the board. }
+1. Qe3 Kc4 { Use the queen to force the king to left side of the board. } { [%csl Gd2][%cal Gd2d8,Gd2a2] } 2. Qd2 Kc5 { keep shrinking the box gradually until you force the king to the last file/rank. } { [%csl Gd3][%cal Gd3a3,Gd3d8] } 3. Qd3 Kc6 { [%csl Gd4][%cal Gd4a4,Gd4d8] } 4. Qd4 Kb5 { take away one more file from the king } { [%csl Gc3][%cal Gc3c8,Gc3a3] } 5. Qc3 Kb6 { Continue shrinking the box. } 6. Qc4 Ka5 7. Qb3 Ka6 { [%csl Gb4][%cal Gb4a4,Gb4b8] } 8. Qb4 Ka7 { [%csl Gb5][%cal Gb5b8,Gb5a5] } 9. Qb5 Ka8 { Alert!
+Don't Continue Shrinking the box now. That would lead to stalemate.
+Now continue with bringing the king over so that you can deliver checkmate. } 10. Kg2 (10. Qb6) 10... Ka7 11. Kf3 Ka8 12. Ke4 Ka7 13. Kd5 Ka8 14. Kc6 Ka7 { The king is now close enough to deliver checkmate. } 15. Qb7# *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Overkill mates: Rook Mate"]
+[Date "2021.02.17"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Overkill mates: Rook Mate"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/xt92Jlg6"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/2k5/8/8/5R2/6K1/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.02.17"]
+[UTCTime "14:12:22"]
+[ChapterMode "gamebook"]
+
+{ Start by Trapping the king in a box using the rook, similar to what we did in the queen mate. }
+1. Rf5 Kd6 { Bring your king closer to defend and help the rook } 2. Kf3 Kc6 { Continue by bringing the king closer. } 3. Ke4 Kd6 { Move your rook away from the enemy king. } { [%csl Gh5][%cal Gf5h5] } 4. Rh5 Kc6 { We need to force the king to the last rank, chase him with your king. } 5. Kd4 Kd6 { Force the king backwards. } 6. Rh6+ Ke7 { Bring your king closer to the rook. } 7. Ke5 (7. Kd5 { Valid alternative move.
+We need to get the king closer to the rook. }) 7... Kf7 { Move the rook away from the enemy king. } { [%csl Gb6][%cal Gh6b6] } 8. Rb6 Kg7 { Chase the king to push him to the last rank. } 9. Kf5 Kf7 { Force the king backwards. } 10. Rb7+ Ke8 11. Ke6 Kd8 { Move the rook away from the enemy king. } 12. Rh7 Kc8 { Now chase him with your king until the king oppose each other, which makes the checkmate possible. } 13. Kd6 Kb8 14. Kc6 Ka8 15. Kb6 Kb8 { Deliver the checkmate. } 16. Rh8# *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Class \"E\" Endgames: Bishop vs Queen"]
+[Date "2021.02.17"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Class \"E\" Endgames: Bishop vs Queen"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/geqDjyLn"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/3b4/6k1/8/8/2K5/Q7 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.02.17"]
+[UTCTime "17:48:04"]
+
+1. Qf1 Be5 2. Kd3 Kg6 3. Ke4 Bc3 4. Qf5+ Kg7 5. Kd5 Kh6 6. Ke6 Kg7 7. Qf7+ Kh6 (7... Kh8 8. Kf5 Ba1 9. Kg6 Bc3 10. Qh7#) 8. Kf5 Ba1 9. Qg6# *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Practice vs computer : \"E\" Queen vs Bishop"]
+[Date "2021.03.04"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Practice vs computer : \"E\" Queen vs Bishop"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/2FWAgd4B"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/4bk2/8/8/3Q4/8/7K w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.03.04"]
+[UTCTime "19:35:54"]
+
+1. Qb5 Bf5 2. Kg2 Be4+ 3. Kg3 Ke6 4. Kf4 Bh1 5. Qc5 (5. Qe5+ Kd7 6. Qf6 Bc6 7. Ke5 Kc7 8. Kd4 Kb6 9. Qd6 Kb5 10. Qc5+ Ka6 11. Qb4 Bb7 12. Kc5 Ka7 13. Kd6 Kb8 14. Qb6 Ka8 15. Kc7 Bh1 16. Qb8#) 5... Bg2 6. Qe5+ Kd7 7. Qf6 Bc6 8. Ke5 Kc7 9. Kd4 Kb6 10. Qd6 Kb5 11. Qc5+ Ka6 12. Qb4 Bb7 13. Kc5 Ka7 14. Kd6 Kb8 15. Qb6 Ka8 16. Kc7 Bh1 17. Qb8# *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Class \"E\" Endgames: Knight vs Queen"]
+[Date "2021.03.04"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Class \"E\" Endgames: Knight vs Queen"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/2nLdBeG3"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/8/3nk3/8/3Q4/8/7K w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.03.04"]
+[UTCTime "19:34:16"]
+
+1. Kh2 Nf6 2. Kg3 *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Practice vs computer : \"E\" Queen vs Knight"]
+[Date "2021.03.04"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Practice vs computer : \"E\" Queen vs Knight"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/05NYh7Lm"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/8/3nk3/8/3Q4/8/7K w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.03.04"]
+[UTCTime "19:35:33"]
+
+{ [%cal Gh1g1,Gg1h2] }
+1. Kh2 Nf6 { [%csl Gg3,Gd3] } 2. Kg3 Ne4+ { [%csl Gd3,Ge5,Ge1][%cal Gg3f3] } 3. Kf3 Nc5 4. Qe3+ Kd5 { [%csl Gd5,Gg2][%cal Gf3f4] } 5. Kf4 Ne6+ 6. Kf5 Nd4+ { [%cal Gf5f6] } 7. Kf6 Nc6 { [%cal Ge3e6,Gd5c5] } 8. Qe6+ Kc5 9. Qd7 Nb4 10. Ke5 Nc6+ { [%cal Gb4c6] } 11. Ke4 Nb4 12. Qd4+ Kb5 13. Qc3 Na6 14. Kd5 Nb4+ { [%cal Gd5d4,Gb4c6] } 15. Kd6 Na6 16. Qc6+ Ka5 17. Qb7 Nb4 18. Kc5 Nd3+ { [%cal Gc5c4,Gd3e5] } 19. Kd5 { [%csl Ga5][%cal Ga5a4] } 19... Ka4 { [%cal Gb7a6] } (19... Nf4+ 20. Kc4 Ne2 21. Qb5#) 20. Kc4 (20. Qa6+ Kb3 21. Qxd3+ Ka2 22. Qb5 Ka1 23. Kc4 Ka2 24. Kc3 Ka1 25. Qb2#) 20... Ne5+ 21. Kc3 Ka5 22. Qd5+ Kb6 23. Qxe5 Kc6 24. Kc4 Kb6 25. Qc5+ Ka6 26. Qb4 Ka7 27. Kc5 Ka8 28. Kc6 Ka7 29. Qb7# *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Practice vs computer : \"B\" Two Bishops Mate"]
+[Date "2021.03.18"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Practice vs computer : \"B\" Two Bishops Mate"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/owhdl8iK"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/5k2/8/8/8/8/4K3/1BB5 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.03.18"]
+[UTCTime "19:54:02"]
+
+ *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Class \"D\" Endgames: Pawn Endgames \"Outside Passed Pawn\""]
+[Date "2021.04.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Class \"D\" Endgames: Pawn Endgames \"Outside Passed Pawn\""]
+[ChapterURL "https://lichess.org/study/EXprT7yo/xDrjSmF4"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "8/8/1k3p2/5Pp1/KP4P1/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.20"]
+[UTCTime "15:58:03"]
+
+ *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Class \"D\" Endgames: Knight vs Lone Pawn"]
+[Date "2021.04.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Class \"D\" Endgames: Knight vs Lone Pawn"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/CCaroV1a"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "7K/8/2N5/8/8/2pk4/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.04.20"]
+[UTCTime "16:19:10"]
+
+ *
+
+
+[Event "Complete Endgame Course - by Jeremy Silman: Knight and Bishop checkmate"]
+[Date "2021.06.19"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Complete Endgame Course - by Jeremy Silman"]
+[ChapterName "Knight and Bishop checkmate"]
+[ChapterURL "https://lichess.org/study/EXprT7yo/MW2sd3dF"]
+[Annotator "https://lichess.org/@/AliJradi"]
+[FEN "7k/8/8/8/8/8/8/3NKB2 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.19"]
+[UTCTime "13:31:24"]
+
+1. Ke2 Kg7 2. Ke3 Kf6 3. Kf4 Kg6 4. Ne3 Kf6 5. Bd3 Kf7 6. Kf5 Kg7 7. Ng4 Kf7 8. Ne5+ Kg7 9. Be4 Kh8 (9... Kh6 10. Kf6 Kh5 11. Bg6+ Kh4 (11... Kh6 12. Ng4#) 12. Kf5 Kg3 (12... Kh3) 13. Bh5 Kh4 14. Bf3 Kg3 15. Ke4 Kf2 16. Kf4 Ke1 17. Ke3 Kf1 18. Nd3 Kg1 19. Kf4 Kh2 20. Kg4 Kg1 21. Kg3 Kf1 22. Bd1 Kg1 23. Be2 Kh1 24. Nf2+ Kg1 25. Nh3+ Kh1 26. Bf3#) 10. Kf6 Kg8 11. Nf7 Kf8 12. Bh7 Ke8 13. Ne5 Kd8 14. Ke6 Kc7 15. Nd7 Kd8 16. Kd6 Ke8 17. Bg6+ Kd8 18. Nc5 Kc8 19. Be4 Kd8 20. Bc6 Kc8 21. Bd7+ Kd8 (21... Kb8 22. Kc6 Ka7 23. Kc7 Ka8 24. Kb6 Kb8 25. Na6+ Ka8 26. Bc6#) 22. Nb7# *
+
+

@@ -8,7 +8,7 @@ import random
 
 # ---------- CONFIG: EDIT THESE ----------
 # Your big PGN file:
-PGN_PATH = Path(r"Carlsen.pgn")#OAWHDOIAWHDOOHAWHDOIHOIWOAHD
+PGN_PATH = Path(r"lichess_study_100-endgames-you-must-know_by_Raoni_2020.12.23.pgn")#OAWHDOIAWHDOOHAWHDOIHOIWOAHD
 
 # Where to save the dataset:
 OUT_PATH = Path(r"processed")

@@ -1,0 +1,1219 @@
+[Event "Dvoretsky's Endgame Manual 5th Edition: PAWN ENDGAMES"]
+[Date "2021.06.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B00"]
+[Opening "King's Pawn Game"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "PAWN ENDGAMES"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/W6Y2k4Iz"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[UTCDate "2021.06.11"]
+[UTCTime "22:25:14"]
+
+{ https://lichess.org/study/v8QhUM70 }
+1. e4 (1. d4) *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Key Squares"]
+[Date "2021.06.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Key Squares"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/eJrpKsLj"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/3k4/8/3K4/3P4/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.11"]
+[UTCTime "22:26:20"]
+
+{ Key squares are what we call those squares whose occupation by the king assures victory, regardless of whose turn it is to move. In other types of endgames, we may also speak of key squares for other pieces besides the king. }
+ *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Key Squares"]
+[Date "2021.06.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Key Squares"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/aj3kpxRY"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "3k4/8/3K4/3P4/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.11"]
+[UTCTime "22:31:24"]
+
+{ If the pawn has crossed the middle. } { [%csl Gc7,Gc6,Gd7,Ge7,Ge6,Gd6] }
+1. Kc6 Kc8 2. d6 Kd8 3. d7 Ke7 4. Kc7 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Opposition #1"]
+[Date "2021.06.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Opposition #1"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/xQqTg0K9"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/1k6/1p6/1K6/P1P5/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.11"]
+[UTCTime "22:36:00"]
+
+1... Kc7! (1... Ka7? 2. a5 bxa5 3. Kxa5 Kb7 4. Kb5 Kc7 5. Kc5) 2. Ka6 Kc6 3. Ka7 Kc7 4. Ka8 Kc8 (4... Kc6? 5. Kb8 { [%cal Gb8b7] } 5... Kc5 6. Kb7 Kb4) 5. Ka7 (5. c5) 5... Kc7 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Opposition #2"]
+[Date "2021.06.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Opposition #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/tbkER0a1"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/5p2/8/6Pk/5P2/8/8/7K w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.11"]
+[UTCTime "22:40:14"]
+
+{ If we dont do anything black's king will eat our pawns and win. }
+1. g6! fxg6 (1... Kxg6 2. Kg2 $10) 2. f5 gxf5 (2... g5) 3. Kg1 Kg5 4. Kf1 $10 Kh4 5. Kf2 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Opposition #3"]
+[Date "2021.06.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Opposition #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/M3FmwiX1"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/4k3/3p4/3P4/2P5/8/8/5K2 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.11"]
+[UTCTime "22:45:25"]
+
+1. Kg2 { Taking the opposition with 1. Ke1? leads only to a draw. The opposition on the e-file is meaningless. In such situations there is usually a "major" line, through three connected key squares (e6, f6, g6), in which it is vitally important to take the opposition. And when the enemy king retreats from it, you must outflank it. Imagine that black king was on f7 and moved to one side. White must outflank, thus: 1. Kg2! } { [%csl Ge6,Gf6,Gg6][%cal Gf1f8] } (1. Ke1? Ke8! 2. Ke2 (2. Kf2 Kf8 3. Kg3 Kg7 4. Kf3 Kf7 $10) 2... Ke7 3. Ke3 Ke8 4. Ke4 Ke7 $10 { E5 is out of reach. }) 1... Kf6 2. Kf2! { As we have already noted, the opposition must be maintained on the f-file. } 2... Ke7 (2... Kf5 3. Kf3 Ke5 4. Ke3 Kf5 5. Kd4 $18) (2... Kg5 3. Ke3 $18 (3. Kg3 $18)) (2... Kg6 3. Ke3 Kf7 4. Kd4 Ke7 5. Kc3 Kd7 6. Kb4 Kc7 7. Ka5 { (Diagonal opposition!) } 7... Kb7 8. Kb5 Kc7 9. Ka6 $18) 3. Kg3! Kf7 4. Kf3 Ke7 5. Kg4 Kf8 6. Kf4 Ke7 (6... Kf7 7. Kf5 $18) 7. Kg5 Kf7 (7... Kf8) 8. Kf5 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Opposition #4"]
+[Date "2021.06.13"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Opposition #4"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/RrQ6MKlj"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/2p5/k1p1K3/p1P5/P7/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.13"]
+[UTCTime "17:02:31"]
+
+{ The first thing white must do is seize the opposition. }
+1. Kf5! { [%csl Gb6,Gf6,Re6,Ra6][%cal Ga5b6,Gf5f6,Rf5e6,Ra5a6] } 1... Kb6 { Black's king must be the first one on the sixth rank. If it had been on a7 in the starting position, then 1...Kb7! would lead to a draw, since white can't seize the opposition: 2.Ke6 Ka6!= or 2.Kf6 Kb6!= } (1... Ka6 2. Ke6 Ka7 3. Ke7 Ka6 4. Kd8) 2. Kf6! { The rest is the standard technique of converting the distant opposition to a close one. Here the "major line" is the seventh rank, through the middle square c7 in the three connected key squares c8, c7 and c6. } { [%csl Gc8,Gc7,Gc6][%cal Gh7a7] } 2... Kb7 3. Kf7 Kb6 4. Ke8 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Mined Squares #1"]
+[Date "2021.06.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Mined Squares #1"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/n0zQqOX3"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/2k5/8/1Pp3p1/6P1/1K6/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.16"]
+[UTCTime "14:41:52"]
+
+{ Sometimes it's a single pair of squares that correspond; I refer to such squares as being "mined". Do not be the first to enter a mined square or else you'll be "blown up" - that is, fall into zugzwang. You must either first allow your opponent to step on the mined square, or move forward, accurately avoiding it. Here's one example. } { [%csl Rc4,Rb6] }
+1. Kc3 Kb7 2. Kb3 Kc7 $10 3. Kc4?? Kb6 $22 $19 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Mined Squares #2"]
+[Date "2021.06.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Mined Squares #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/RS7nzjuG"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/2k1p3/4P1K1/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.16"]
+[UTCTime "14:47:58"]
+
+{ Here, kings at f6 and d5 result in reciprocal zugzwang. White wins by forcing black to enter a the mined square first. }
+1. Kg6! Kc5 (1... Kd5 2. Kf6 $22 $18) (1... Kd7 { Passive defense is hopeless too: } 2. Kf7 Kd8 3. Kxe6 { The king is on a key square. } 3... Ke8 4. Kd6 Kd8 5. e6 Ke8 6. e7 $22 $18) 2. Kf7 Kd5 3. Kf6 $22 $18 { Black to move in the first position plays 1...Kc5! but white can draw by taking the opposition. } 3... Kc6 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Triangulation #1"]
+[Date "2021.06.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Triangulation #1"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/PqSiqXcw"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/1p1k4/1P6/2PK4/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.16"]
+[UTCTime "14:57:19"]
+
+{ Triangulation refers to a king maneuver which aims to lose a tempo, and leave the opponent with the move.
+
+The d5- and d7-squares are in correspondence. The mobility of black's king is restricted: he must watch for the c5-c6 break, and also avoid being pressed to the edge of the board. It is not surprising, therefore , that white can easily "lose" a tempo and place his opponent in zugzwang. }
+1. Ke5! { Other moves work too. } (1. c6+? Kc8! $10 (1... bxc6+?? 2. Kc5 $18 Kd8 3. Kd6)) (1. Kd4!) (1. Ke4!) 1... Kc6 (1... Ke7 2. c6 Kd8 3. cxb7) 2. Kd4 Kd7 (2... Kb5 3. Kd5 Ka6 4. Kd6 $18 (4. c6?? Kxb6 $10)) 3. Kd5 { White has achieved his aim, by describing a triangle with his king. The rest is simple. } 3... Kc8 4. Ke6 { (Diagonal opposition. Kd7 worked too.) } 4... Kd8 5. Kd6 { (And now, vertical.) } 5... Kc8 6. Ke7 Kb8 7. Kd7 Ka8 { Don't stalemate! } 8. c6! $18 bxc6 9. Kc7 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Triangulation #2"]
+[Date "2021.06.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Triangulation #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/J7gFmnAH"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/p1P5/P7/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.16"]
+[UTCTime "15:13:42"]
+
+{ The kings were on d5 and c8 here; but we shall not place them on the board just yet - let's deal with the squares of correspondence first.
+Two pairs of squares of reciprocal zugzwang are obvious right off, d6/d8 and c5/c7. The squares d6 and c5 border on d5; and for black, the corresponding squares d8 and c7 border on c8. Thus, a standard means of identifying new correspondence: that of the d5- and c8-squares.
+Along with d5 and c5, white has two equally important squares: c4 and d4. Black also has two corresponding squares, b8 and d8, but the are not connected, while c4 and d4 are.
+Go to the next chapter. } { [%csl Gd8,Gd6,Rc5,Rc7,Yc8,Yd5] }
+ *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Triangulation #3"]
+[Date "2021.06.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Triangulation #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/iVqVI4C2"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "2k5/8/p1P5/P2K4/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.16"]
+[UTCTime "15:34:16"]
+
+1. Kd4! { 1.Kc4 works too. } 1... Kd8 (1... Kb8 2. Kc4 Kc8 3. Kd5) 2. Kc4! Kc8 3. Kd5! Kd8 (3... Kc7 4. Kc5 Kc8 5. Kb6 $18) 4. Kd6 Kc8 5. c7 $22 $18 Kb7 6. Kd7 Ka7 { There is only one bad move in this position. The easiest way to win is to make sure to promote with check. } 7. Kc6! (7. c8=Q?? $10) 7... Ka8 8. c8=Q+ Ka7 9. Qb7# *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Triangulation/Opposition #4"]
+[Date "2021.06.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Triangulation/Opposition #4"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/FNEYOlsB"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/3k1p1p/5P2/4K1PP/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.16"]
+[UTCTime "17:22:15"]
+
+{ Find two winning plans.
+
+The author's solution to this study involves the opposition, which white seizes with his very first move. }
+1. Kd4 (1. Kf3) 1... Kc6 2. Kc4 Kd6 3. Kb5 Kd5 (3... Ke5 4. Kc6 Kf4 (4... h5 5. gxh5 Kxf5 6. Kd5!) 5. Kd6 Kxg4 6. Ke6 $18) 4. Kb6 (4. h5?? Ke5 5. Kc6 Kf4 6. Kd6 Kxg4 7. Ke6 Kg5 $22 $19) 4... Kd6 5. Kb7 Kd7 6. h5! Kd6 7. Kc8 Ke5 8. Kd7 Kf4 9. Ke6 $18 { Go to the next chapter. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Triangulation #5"]
+[Date "2021.06.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Triangulation #5"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/gffXMaSZ"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/3k1p1p/5P2/4K1PP/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.16"]
+[UTCTime "17:52:12"]
+
+{ During a training session I found another solution to this study, based on a completely different logic.
+The d5-square is key here (with white's king at d5 and black's at d7, white wins by h4-h5). By the way, with the pawn already on h5, occupying the d5 square is no longer decisive: the key squares are now on the sixth rank - c6, d6 and e6. Which leads us to an important conclusion: when the pawn structure changes, the system of key squares associated with the position generally changes too, just as with the system of corresponding squares.
+With white's king at f4, black must deal with the threat of g4-g5. It can be parried by putting the black king on e7 (but not on f7, because white's king will occupy the key square d5) - which immediately gives us two pairs of corresponding squares: f4/e7 and e4/d6. Next to these, white has two equivalent squares: f3 and e3. Black meanwhile has only one - d7. Thus, the winning mechanism becomes clear - triangulation! } { [%csl Ge7,Gf4,Re4,Rd6] }
+1. Kf4 (1. Kf3 { Works too. }) (1. Ke3? Ke5! 2. Kf3 h5 3. Kg3 Ke4 $22 $10) 1... Ke7 2. Kf3 Kd7 (2... Kd6 3. Ke4 Kc6 4. Kf4 $18) 3. Ke3 Kd6 (3... Ke7 4. Kf4! Kf7 5. Ke4 Ke7 6. Kd5 Kd7 7. h5 $22 $18) 4. Ke4! Kc6 5. Kf4 Kd6 6. g5 $18 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Other Cases Of Correspondence"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Other Cases Of Correspondence"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/os9nIFFR"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/8/5k2/2pP4/2P5/4K3 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "13:34:08"]
+
+1... Kf3! (1... Ke3? 2. Kd1 Kf2 3. Kc1 Ke3 4. Kb1 Kd4 5. Ka2 Kc5 6. Kb3 Kb5) 2. Kf1 Ke3 3. Ke1 Kf3 4. Kd1 Ke3 5. Kc1 Kd4 6. Kb1 Kc5 7. Ka2 Kb4 8. Kb1 Kc5 9. Kc1 Kd4 10. Kb1 Kc5 11. Ka2 Kb4 12. d4 Kc4 13. Ka3 Kxd4 14. Kb4 Kd5 15. Kxc3 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Other Cases Of Correspondence #2"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Other Cases Of Correspondence #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/zcwWrmyN"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/3pPk2/3P1p2/5K2/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "13:38:38"]
+
+{ [%csl Gf6,Rg3,Rg7,Bg6,Bf3,Gf4,Gh3] }
+1. Kf3 { [%csl Gf4,Gh3,Rg3,Gf6,Bg6,Rg7,Bf3] } 1... Kg6 2. Kg2 Kf6 3. Kf2 (3. Kh3 Kg7 4. Kg3 Kg6 (4... Kf6 5. Kf4 Kg6 6. e7 Kf7 7. Kxf5 Kxe7 8. Kg6) 5. Kh4 Kf6 6. Kh5) 3... Kg6 4. Kf3 Kf6 (4... Kg7 5. Kg3 Kg6 6. Kh4 Kf6 7. Kh5) 5. Kf4 Kg6 6. e7 Kf7 7. Kxf5 Kxe7 8. Kg6 $18 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Other Cases Of Correspondence #3"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Other Cases Of Correspondence #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/7Hzgv5BG"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "5k2/8/5p2/7p/8/4PK2/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "13:51:34"]
+
+{ [%csl Gf7,Gg3] }
+1. Kg2!! (1. Kf4? Ke7! 2. Kf5 (2. Kg3 Kf7) 2... Kf7 3. e4 (3. Kf4 Ke6 4. Ke4 h4 5. Kf4 Kd5) 3... h4! 4. Kg4 Ke6 5. Kxh4 Ke5) (1. Kg3 Kf7 2. Kh4 (2. Kf4 Ke6) 2... Kg6) (1. Kf2? Ke7) (1. e4 Ke7 2. Kf4 (2. Ke3 Ke6 3. Kf4 h4 4. Kg4) 2... Ke6) 1... Kg8 (1... Kg7 2. Kf3! { The black king can only reach e6 through f7. The white king will then be able to access g3 on it's way to h4. } 2... Kf7 (2... Kg6 3. Kf4 f5) 3. Kg3 Ke6 (3... Kg6 4. Kf4 f5 (4... Kh6 5. Kf5 Kg7 6. Kf4) 5. e4)) 2. Kf2 (2. Kf3 { Leads to the same thing. }) 2... Kf8 3. Kg2! Ke7 4. Kh3! (4. Kg3? Kf7 5. Kf3 Ke6 6. Ke4 h4 7. Kf4) 4... Kf7 5. Kg3! Kg6 (5... Ke6 6. Kh4 $10) (5... f5 6. e4 (6. Kf4 h4 7. e4 h3 8. Kg3 fxe4 9. Kxh3 Ke6 10. Kg3 Kd5 11. Kf2 Kd4 12. Ke2 $10) 6... fxe4 7. Kf4 h4 8. Kxe4 h3 9. Kf3 h2 10. Kg2 h1=R 11. Kxh1) 6. Kf4 Kh6 (6... Kf7 7. Kg3 (7. Kf5? Ke7 $22 8. e4 h4 9. e5 (9. Kg4 Ke6 10. Kf4 h3 11. Kg3 Ke5 12. Kxh3 Kxe4 $19) 9... h3 10. exf6+ Kf7 11. Kg4 h2 12. Kg3)) 7. Kf5 Kh7 (7... Kg7 8. Kf4 (8. e4? Kf7 9. e5 h4 $19) 8... Kg6 9. e4! Kh6 10. Kf5 Kg7 11. e5 $10) 8. e4 Kh6 (8... Kg7 9. e5 $10) 9. Kxf6 h4 10. e5 h3 11. e6 h2 12. e7 h1=Q 13. e8=Q $10 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Reti's Idea"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Reti's Idea"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/lk4OoPqZ"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "7K/8/k1P5/7p/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "16:29:43"]
+
+1. Kg7 h4 2. Kf6 h3 (2... Kb6 3. Ke5 h3 4. Kd6 h2 5. c7) 3. Ke6 Kb6 4. Kd7 h2 5. c7 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Reti's Idea #2"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Reti's Idea #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/01D06jx1"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/6p1/k1P2p1p/7K/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "16:33:14"]
+
+1. Kg6! f5 (1... Kb6 2. Kxg7 f5 3. Kf6 f4 4. Ke5 f3 5. Kd6) 2. Kxg7 f4 (2... Kb6 3. Kf6) 3. Kf6 f3 (3... Kb6 4. Ke5 f3 5. Kd6 f2 6. c7 Kb7 7. Kd7) 4. Ke7 f2 5. c7 Kb7 6. Kd7 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Reti's Idea #3"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Reti's Idea #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/xEY9zv2N"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "3K4/7p/3k4/P7/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "16:36:42"]
+
+1. Kc8 Kc6 2. Kb8 Kb5 3. Kb7! { Threatening to promote and going after the pawn at the same time. } 3... Kxa5 4. Kc6 h5 5. Kd5 $10 { [%cal Gh5d1,Gd1d5,Gd5h5,Gh5h1,Gh1d1] } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Reti's Idea #4"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Reti's Idea #4"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/HU4xALFP"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/1pPK3b/8/8/8/5k2/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "16:38:53"]
+
+1. Kc8!! (1. c8=Q? Bf5+ 2. Kc7 Bxc8) (1. Kd6? Bf5 2. Kc5 Ke4 3. Kb6 Bc8 4. Ka7 b5) 1... b5 2. Kd7 b4 3. Kd6! (3. Kc6? Bf5) (3. Ke6) 3... Bf5 4. Ke5! Bc8 5. Kd4 $10 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Tragicomedies"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Tragicomedies"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/GUKGdDLZ"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/8/p2K4/3Q4/kp3P2/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "16:44:35"]
+
+1. Kc3? b1=Q 2. Qxb1+ Kxb1 3. Kb4 Kb2 4. Kxa4 Kc3 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Floating Square"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Floating Square"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/hHzQNdFH"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/6k1/6P1/p1K1p2P/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "16:48:46"]
+
+{ There are cases when a king must battle with two seperated passed pawns; in these cases, a useful rule is the floating-square rule, suggested by Studenecki in 1939.
+If a square whose two corners are occupied by pawns (on the same rank) reaches the edge of the board, then one of those pawns must queen. (Unless one can be captured right away.) If the square does not reach the edge of the board, then the king can hold the pawns. If there are two files between the pawns the king can capture both; if the distance is any greater, he can only prevent their further advance. (The cases where there is only one file between the pawns will be looked at later.)
+
+The square having reached the edge of the board, the pawns will queen, regardless of whose move it is. } { [%cal Ga5a1,Ga1e1,Ge1e5,Ge5a5] }
+1... a4 (1... Kh6? { Reti's idea can be seen here too. } 2. Kd5 a4 3. Ke6 a3 (3... Kg7 4. Kf5 a3 5. h6+) 4. Kf6 a2 5. g7 a1=Q 6. g8=Q e4+ 7. Kf5) 2. Kb4 e4 3. Kxa4 e3 $19 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Floating Square #2"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Floating Square #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/zCDhoSAz"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/6k1/p3p1P1/2K4P/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "19:10:29"]
+
+{ The square now only reaches the second rank and tge position becomes a draw. In fact, 1...a5? would be bad and so is 1...Kh6? }
+1... Kf6 (1... a5? 2. Kb5 e5 { Even though the pawns create a square that reaches the end of the board, one of them gets captured instantly and the king is in the square of the other pawn. } 3. Kxa5 e4 4. Kb4 e3 5. Kc3) (1... Kh6? 2. Kd6! a5 3. Kxe6 Kg7 (3... a4 4. Kf7 a3 5. g7 a2 6. g8=Q a1=Q 7. Qg6#) 4. Kf5 a4 5. Kg5 a3 6. h6+ Kg8 7. Kf6 a2 8. h7+ Kh8 9. g7+ Kxh7 10. Kf7 a1=Q) 2. Kc6 (2. Kb6? e5 3. Kc5 a5 { [%cal Ga5a1,Ge5a5,Ga1e1,Ge1e5] }) *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Floating Square #3"]
+[Date "2021.06.20"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Floating Square #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/TQ0aWxKG"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/6k1/6P1/p2p3P/8/1K6/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.20"]
+[UTCTime "16:59:00"]
+
+{ The pawns are lost regardless of who is to move. }
+1. Ka4 d4 2. Kb3 Kf6 3. Kc4 a4 4. Kxd4 a3 5. Kc3 $18 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Floating Square #4"]
+[Date "2021.06.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Floating Square #4"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/6jHxbNMR"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "6k1/8/5P1P/8/p1p5/8/1K6/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.23"]
+[UTCTime "16:30:29"]
+
+{ On the queenside, the square does not reach the edge of the board, so the pawns can be held: }
+1. Kc3 (1. Ka3 c3 2. Ka2) 1... a3 2. Kc2 { On the kingside, however, the pawns are already quite far advaced. True, the king can prevent them from queening - so far; but because of zugzwang he'll be forced to let them through. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Floating Square #5"]
+[Date "2021.06.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Floating Square #5"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/fD0IGE6w"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/2p3p1/2p2kP1/4pP1P/4K3/2P5/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.23"]
+[UTCTime "17:35:31"]
+
+1. h6! gxh6 2. Kf3 h5 { [%cal Ge5e2,Ge2h2,Gh2h5,Gh5e5] } (2... c5 3. Kg4 c4 4. Kh5 Kg7 5. f6+ Kxf6 6. Kxh6) 3. Kg3 c5 (3... Kg7 4. c4 c5 5. Kh3 Kh6 6. Kh4 c6 (6... Kg7 7. Kg5 e4 8. f6+ Kg8 9. g7 (9. Kf4) (9. Kxh5)) 7. Kh3 Kg7 8. Kg3 { Triangulation! }) 4. Kf3 (4. c4 c6 5. Kf3 (5. Kh4 e4 6. Kg3 h4+ (6... Kg7 7. Kf4 h4)) 5... Kg7 6. Ke4) *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Exercise"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Exercise"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/rM2ge2VU"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/p4k2/2p3p1/3q3p/3pQP1P/3P4/1KP5/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "13:39:44"]
+
+1... Qxe4 2. dxe4 a5! (2... c5? 3. c3! dxc3+ (3... a5 4. cxd4 cxd4 5. Kb3 Ke6 6. Kc4 Kd6) 4. Kxc3 Ke7 (4... a5 5. Kc4 a4 6. Kc3 Ke7 7. Kc4 Kd6 8. Kc3) 5. Kc4 Kd6 6. Kb5 a6+ 7. Kc4 Kc6 $10 { No progress for white or black. } (7... a5?? 8. Kb5 $22 a4 9. Kxa4 $18) 8. Kd3 Kb5 9. Kc3 a5 10. e5) 3. Kb3 c5 4. c4 (4. Kc4 a4) (4. c3 d3 5. e5 Ke6 6. c4 a4+ 7. Kc3 a3) (4. f5) (4. Kb2 c4) 4... Kg7 5. Ka4 (5. Kc2 a4 6. Kb2 d3) 5... d3 6. Kb3 a4+ 7. Kc3 a3 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Three Connected Pawns"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Three Connected Pawns"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/O4PSiOQW"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "6k1/8/5P1P/8/ppp5/8/2K5/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "15:22:42"]
+
+{ It is difficult for the king to fight three connected passed pawns. It has no chance if the opponent has any moves in reserve. If not, then a situation of reciprocal zugzwang could arise.
+
+White to move wins by: }
+1. Kb1! { Any other first move leads to the opposite result. } (1. Kb2? b3 $22 2. Ka3 c3 3. Kxa4 c2) 1... b3 (1... a3 2. Ka2 c3 3. Kb3 $22) (1... c3 2. Kc2 a3 3. Kb3 $22) 2. Kb2 $22 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Three Connected Pawns #2"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Three Connected Pawns #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/Nh9jz5Ek"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/5p2/N1k5/2Pp2pp/P7/2P5/8/6K1 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "15:30:07"]
+
+{ On the queenside, we have equality: it would be bad for either side to make the first move there. The question is, who will fall into zugzwang when the kingside pawn moves run out? White would win by playing: }
+1. Kh2! { (or 1.Kg2!?) The important point is to be able to meet 1...h4 with 2.Kh3! For instance: } (1. Kf2?? h4! 2. Kf3 (2. Kg2 g4) 2... h3 3. Kg3 g4 4. a5 Kb5) 1... h4 (1... g4) 2. Kh3 f5 (2... f6 3. Kg4 f5+ 4. Kh3 f4 5. Kg4) 3. Kh2! g4 (3... f4 4. Kg2 g4 5. Kg1 $18) 4. Kg2 f4 (4... h3+ 5. Kg3 f4+ 6. Kh2 f3 7. Kg3 $22 $18 Kb7) (4... g3 5. Kf3 f4 6. Kg2 $22 $18) 5. Kg1 $22 Kb7 6. Nb4 Kc7 7. a5 Kb7 8. Nxd5 Kc6 (8... f3 9. Kf2 h3 10. Kg3 f2 11. Ne3 Kb8 12. Kxf2) 9. a6 f3 10. Kf2 h3 11. Kg3 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Queen vs Pawns Knight Or Center Pawn"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Queen vs Pawns Knight Or Center Pawn"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/5G4T4VVr"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "2KQ4/8/8/8/8/8/2kp4/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "15:56:55"]
+
+{ The queen generally wins against either a center or knight pawn.
+
+The algorithm is simple: the queen uses checks or attacks on the pawn to get closer to the enemy king and drive it to the d1-square. This gives white's king a tempo to get closer to the pawn. This procedure is repeated as often as necessary. }
+1. Qc7+ Kb1 2. Qb6+ Kc2 3. Qc5+ Kb1 4. Qb4+ (4. Qd4) 4... Kc2 5. Qc4+ Kb2 6. Qd3 Kc1 7. Qc3+ Kd1 8. Kc7 Ke2 9. Qc2 (9. Qe5+) (9. Qc4+ Ke1 10. Qe4+ Kf2 11. Qd3 Ke1 12. Qe3+ Kd1) 9... Ke1 10. Qe4+ Kf2 11. Qd3 Ke1 12. Qe3+ Kd1 13. Kc6 { etc.
+A draw is very rarely possible - when, for some reason, white is unable to execute this mechanism. An example would be if the white king was in the starting position at c7, c6 or c5. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Queen vs Pawns Knight Or Center Pawn #2"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Queen vs Pawns Knight Or Center Pawn #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/4vL2VTh1"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "5K2/8/8/p7/P7/2Q5/kp6/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "16:08:59"]
+
+1. Qc2 Ka1 2. Ke7 b1=Q 3. Qxb1+ Kxb1 4. Kd6 Kc2 5. Kc5 Kd3 6. Kb5 Kd4 7. Kxa5 Kc5 $10 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Queen vs Pawns Rook Or Bishop Pawn"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Queen vs Pawns Rook Or Bishop Pawn"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/466yczEN"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/3K4/Q7/8/1kp5/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "16:11:13"]
+
+1. Qb4+ Ka2 2. Qc3 (2. Qd2 Kb1) 2... Kb1 3. Qb3+ Ka1! 4. Qe3 Kb1 5. Qd3 Kb2 (5... Ka1 6. Kc4 c1=Q+ 7. Kb3 Qa3+ (7... Qb2+) 8. Kxa3 $10) 6. Qe2!? (6. Qd2 Ka1? (6... Kb1 7. Qd3 Kb2 8. Qe2 Kb1) 7. Qc1+ Ka2 8. Kd4 (8. Qxc2+ Ka1 9. Qh2)) 6... Ka1! $10 (6... Kb1? 7. Kc4! c1=Q+ 8. Kb3 $18) 7. Kc4 (7. Qa6+ Kb1 8. Kc4 c1=Q+ 9. Kb3) 7... c1=Q+ 8. Kb3 Qb1+ 9. Ka3 Qd3+ *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Queen vs Pawns Rook Or Bishop Pawn #2"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Queen vs Pawns Rook Or Bishop Pawn #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/lD31D6di"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/3K4/Q7/8/2pk4/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "16:17:40"]
+
+1. Qd4+ Ke2 (1... Kc1 2. Kc4 Kb1 3. Kb3 c1=N+ 4. Kc4) 2. Qc3 Kd1 3. Qd3+ Kc1 4. Kc4! Kb2 5. Qd2 Kb1 (5... Ka3!? 6. Qc1+ Ka2 7. Qxc2+ Ka1 8. Qh2) 6. Kb3 $18 c1=N+ 7. Ka3 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Queen vs Pawns Rook Or Bishop Pawn #3"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Queen vs Pawns Rook Or Bishop Pawn #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/jOfZsJnr"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/1K6/8/Q7/p7/1k6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "16:29:10"]
+
+1. Qb3+ (1. Kb4! a1=Q 2. Qd3+ Kc1 3. Qf1+ Kb2 4. Qe2+ Kc1 5. Qe1+ Kb2 6. Qd2+ Kb1 7. Kb3!) (1. Qb4+ Ka1 2. Qd2 (2. Qe1+ Kb2 3. Qe2+ Kb1 4. Kb4 a1=Q 5. Kb3) 2... Kb1 3. Kb4 a1=Q 4. Kb3) 1... Ka1! 2. Qd1+ Kb2 3. Qd2+ (3. Qe2+ Kb1 4. Kb4 a1=Q 5. Kb3) 3... Kb1 4. Kb4! a1=Q 5. Kb3 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Queen vs Pawns Rook Or Bishop Pawn #4"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Queen vs Pawns Rook Or Bishop Pawn #4"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/HT96wraR"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/8/4K3/Q7/p7/1k6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "16:32:35"]
+
+1. Qb3+ Ka1 2. Qc3+ Kb1 3. Kd3! a1=Q (3... a1=N 4. Qa3 Nc2 5. Qb3+ Ka1 6. Kc3 Ne1 7. Qb2#) 4. Qc2# *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Zugzwang"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Zugzwang"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/kuFsmEl0"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/4k1p1/2p5/4K3/8/3P4/6P1/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "17:07:40"]
+
+1. g3! (1. d4) (1. g4? Kd7 2. g5 Ke7 3. g6 (3. d4 Kd7 4. Kf5 Ke7 5. Kg6 Kf8) 3... Kd7) 1... Kd7 (1... g6 2. g4 Kf7 3. Kd6) 2. g4 (2. Kf5 Kd6 3. Kg6 Ke5 4. Kxg7 Kd4 5. g4 Kxd3 6. g5 c5 7. g6 c4 8. Kh7 c3 9. g7 c2) 2... Ke7 3. g5 $22 (3. d4? Kd7 4. Kf5) 3... Kd7 4. Kf5 Ke7 5. Kg6 Kf8 6. Kh7 Kf7 (6... c5 7. g6) 7. g6+ Kf6 8. d4 $18 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Widening The Beachhead"]
+[Date "2021.06.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Widening The Beachhead"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/AkaTO6TO"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/2pk4/3p2p1/1p1P2P1/3K4/P1P5/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.06.29"]
+[UTCTime "18:15:39"]
+
+{ Who stands better? White intends to play c2-c3, obtaining an outside passer, which will secure him a decisive advantage.
+Nimzovitch hits upon the correct plan - he activates his king, even if it means sacrificing a pawn. }
+1... Kc7! (1... c5? 2. dxc5+ Kxc5 3. c3) 2. c3 Kb6! 3. cxb4 (3. c4 { White will continue by exchanging pawns at d5. It is not hard to see that b5/b3 and a4/a2 are corresponding squares; after that we can establish a third pair of corresponding squares: a5/c2. Now we understand that black must inevitably take advantage of this correspondence (since he can wait on either of the equivalent squares a6 and b6, while white cannot). } { [%csl Gb5,Gb3,Ra2,Ra4,Ba5,Bb2] } 3... Ka6! 4. cxd5 (4. c5 Kb5 $22 $19) 4... cxd5 5. Kc2 Ka5 $22 6. Kb2 Ka4 $22 7. Kc2 Ka3 8. Kb1 b3 9. Ka1 Kb4 10. Kb1 bxa2+ { In order to win, black cleared a path for his king towards the center. This is, in fact what "widening the beachhead" means - trading off pawns, with the idea of clearing a path for the king. }) 3... Kb5 4. Kc3 Ka4 $22 { As black had foreseen, it is zugzwang. White resigned since he has to lose all his queenside pawns. } 5. Kc2 Kxb4 { (White still has the outside passer here but the black king's activity means far more here.) } 6. Kd3 Ka3 7. Kc3 Kxa2 8. Kb4 Kb2 9. Kc5 Kc3 $19 10. Kd6 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Widening The Beachhead #2"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Widening The Beachhead #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/6syvf0X3"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/pp2kppp/4p3/8/1Pr5/P3PP2/3K1P1P/R7 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "16:36:30"]
+
+1. Rc1? (1. f4! $15) 1... Rxc1 2. Kxc1 Kf6 3. Kd2 Kg5 4. Ke2 Kh4 5. Kf1 Kh3 6. Kg1 e5 7. Kh1 b5! 8. Kg1 f5 9. Kh1 g5 10. Kg1 h5 11. Kh1 (11. e4 fxe4 12. fxe4 Kg4 13. Kg2 Kf4 14. f3 g4) 11... g4 (11... h4 12. Kg1 g4 13. fxg4 Kxg4 14. Kg2 h3+ 15. Kg1 Kf3 16. Kf1 e4 17. Ke1 (17. Kg1 Ke2 18. Kh1 Kxf2 19. a4 bxa4 20. b5 a3 21. b6 a2 22. bxa7 a1=R#) 17... Kg2 18. Ke2) 12. e4 (12. fxg4 fxg4! (12... hxg4?! 13. Kg1 f4 14. exf4 exf4 15. Kh1 f3! (15... g3? 16. hxg3 fxg3 17. fxg3 (17. Kg1 $10) 17... Kxg3 18. Kg1 Kf3 19. Kf1 Ke3 20. Ke1 Kd3 21. Kd1 Kc3 22. a4! bxa4 $10 (22... a6 23. axb5 axb5 24. Kc1 Kxb4 25. Kb2 $10) (22... Kxb4 23. axb5 Kxb5 $10)) 16. Kg1 Kh4 17. Kh1 Kg5 18. h3 gxh3 19. Kh2 Kg4 20. Kh1 Kf4 21. Kh2 Ke4 22. Kxh3 Kd3 23. Kg4 Ke2 24. Kg3 a6 $19) 13. Kg1 e4 14. Kh1 h4 15. Kg1 g3) 12... fxe4! 13. fxe4 (13. fxg4 hxg4 14. Kg1 e3 15. fxe3 e4 16. Kh1 g3) 13... h4 14. Kg1 g3 15. hxg3 hxg3 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Zigzag"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Zigzag"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/FHAyKApP"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/1p6/8/8/6P1/k1K5/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "16:51:07"]
+
+1. Kc3! (1. g4? b5 2. g5 b4 3. g6 b3+ 4. Kc3 b2 5. g7 b1=Q 6. g8=Q+ Ka1! $10) 1... Ka3 2. Kc4 Ka4 3. g4 b5+ 4. Kd3! Ka3 5. g5 b4 6. g6 b3 7. g7 b2 8. Kc2! Ka2 9. g8=Q+ *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Zigzag #2"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Zigzag #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/f4AqS0EW"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "2k5/p7/8/4P3/8/7K/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "16:55:14"]
+
+1. Kg4 a5 2. Kf5! a4 3. Kg6! (3. e6? Kd8 4. Kf6 Ke8) (3. Kf6? a3 4. e6 a2 5. e7 a1=Q+) 3... a3 (3... Kd7 4. Kf7) 4. e6 a2 5. e7 Kd7 6. Kf7 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Pendulum"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Pendulum"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/R9U0cEjZ"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/5p2/8/P7/4k1K1/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "16:59:27"]
+
+1. Kg3! Ke3 2. Kg2! Ke2 (2... f4 3. Kf1 (3. a4? Ke2 4. a5 f3+ 5. Kg3 f2 6. a6 f1=Q)) 3. Kg3 $10 Ke3 4. Kg2 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Shouldering"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Shouldering"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/qHmEaFZz"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/p4K2/P7/8/8/8/1k6/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "17:01:58"]
+
+{ Quite often, one must choose a route for the king that gives "shouldering" to the enemy king - that is, it prevents the enemy king from arriving in time at an important part of the board. "Shouldering" is often also called a "bodycheck."
+
+White will win the pawn at a7. Black can save himself only if he can press the white king to the edge of the board with ...Kc7. The game was drawn after: }
+1. Ke6 Kc3 2. Kd6? (2. Kd5! $18 { White's king approaches the pawn while simultaneously "shouldering" the enemy king, keeping it from approaching the c7-square. } 2... Kb4 (2... Kd3 3. Kc6 Kd4 4. Kb7) 3. Kc6 Ka5 4. Kb7) 2... Kd4 3. Kc6 Ke5 4. Kb7 Kd6 5. Kxa7 Kc7 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Breakthrough"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Breakthrough"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/5l4pIBnw"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/ppp5/8/PPP5/8/7k/8/7K w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "17:10:38"]
+
+{ A breakthrough occurs when one or more pawns are sacrificed in order to create a passed pawn and promote it.
+Let's examine a few of the standard structures where a pawn breakthrough is possible.
+
+Now let's also move the a-pawn to a4. In this case, black can stop the breakthrough for good with 1...c6! 2.a5 a6! }
+1. b6! cxb6 (1... axb6 2. c6) 2. a6 bxa6 3. c6 { Black to move has only one way to parry the threatened breakthrough: by 1...b6! (both 1...a6? 2.c6! and 1...c6? 2.a6! are bad).
+Let's add one more pawn at c4. Now the move 1...b6 no longer works because of 2.cxb6 cxb6 3.c5 } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Breakthrough #2"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Breakthrough #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/eC0YDcFR"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/2p3kp/ppp5/6PK/2P4P/P1P5/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "17:24:58"]
+
+{ This is the sort of structure we find in the Ruy Lopez Exchange Variation. Black to move can create a passed pawn which wins by 1...c4! 2.Kg3 c5, followed by ...b5-b4, a5-a4 and ...b4-b3. (Strictly speaking, the term "breakthrough" is not really appropriate here, since no pawn sacrifice is involved but the effect is still the same.)
+
+White to move can stabilize the situation on the queenside by 1.c4! which guarantees him a decisive advantage, thanks to the outside passer he will create. }
+1. c4 (1. Kg3 c4 2. h4 c5 3. Kf4 b4 4. g5 hxg5+ 5. hxg5 a4 6. Kg4 b3 7. cxb3 cxb3) *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Breakthrough #3"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Breakthrough #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/Dd2WWngw"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "6k1/6pp/5p2/4p3/p1p1P2P/2P2PP1/1K6/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "17:33:44"]
+
+{ Black's position looks difficult, since the enemy king rules the kingside. But the possibility of a pawn breakthrough changes the evaluation of the position completely. }
+1... h5! 2. Ka3 (2. g4 g5! (2... hxg4 $19)) 2... g5 3. Kxa4 f5! 4. Kb5 (4. hxg5 f4) (4. exf5 g4 5. fxg4 e4) 4... f4 (4... g4 5. Kxc4 gxf3 6. Kd3 fxe4+ 7. Ke3) 5. gxf4 gxh4 $19 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Breakthrough #4"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Breakthrough #4"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/FilGe7GF"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/6p1/8/p1p1p1kP/1p1pP1P1/1P1P3K/1PP5/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "18:15:25"]
+
+{ The errors committed in the following examples are quite instructive. They could have been put in the "Tragicomedies" section, except that I aready have a plenty of material for that section without them.
+
+Black resigned, never suspecting that the queenside pawn structure contained the possibility of a pawn breakthrough. }
+1... c4! 2. bxc4 (2. dxc4 a4 3. bxa4 b3 4. cxb3 d3 $19) (2. Kg3 a4! (2... c3! $19 3. bxc3 dxc3) 3. bxa4 b3 4. cxb3 c3 $19) 2... a4 3. c5 a3 4. bxa3 bxa3 5. c6 a2 6. c7 a1=Q 7. c8=Q { The pawns queen simultaneously; but black has an easy win by once again by obtaining a pawn ending. Note black's working the queen up to h4 - a standard technique in these positions - ensuring that the g4 pawn is captured with a check. } 7... Qf1+ 8. Kg3 Qf4+ 9. Kh3 Qf3+ 10. Kh2 Qf2+! 11. Kh3 (11. Kh1 Qh4+) 11... Qh4+ 12. Kg2 Qxg4+ 13. Qxg4+ Kxg4 14. Kf2 Kxh5 $19 15. Ke1 g5 16. Kf2 g4 17. Kg3 Kg5 18. Kf2 Kh4 19. Kg2 g3 20. Kg1 Kh3 21. Kh1 g2+ 22. Kg1 Kg3 23. c3 dxc3 24. d4 c2 25. d5 c1=R#! *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Breakthrough #5"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Breakthrough #5"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/PTkExniJ"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/7p/p7/3k1pPP/3p4/3K4/P7/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "18:31:07"]
+
+1... Ke5?? (1... Ke6! 2. Kxd4 f4 3. Ke4 f3 4. Kxf3 Kf5 5. g6 hxg6 6. hxg6 Kxg6 $10) 2. h6 { [%cal Gg5g6] } 2... Ke6 3. g6 $18 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Breakthrough #6"]
+[Date "2021.07.01"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Breakthrough #6"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/otFIVJty"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/5pp1/4k2p/2P4P/4K1P1/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.01"]
+[UTCTime "18:33:25"]
+
+{ The position is drawn: }
+1... Kd6 (1... g5 2. g4 hxg4 3. h5 f5 4. h6 f4+ 5. Kf2 g3+ 6. Kg2 Kf6 (6... Ke4 7. h7 Kd4 8. h8=Q+ Kxc4)) 2. Kd4 Kc6 3. c5 g5 4. Ke4 gxh4 5. gxh4 Kxc5 6. Kf5 Kd6 (6... Kd5) *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Two Pawns to One #1"]
+[Date "2021.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Two Pawns to One #1"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/9b62Ptte"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/8/pPk5/P7/2K5/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.10"]
+[UTCTime "20:11:40"]
+
+{ These positions are generally won. }
+1. Kd3 Kd5 2. Ke3 Ke5 3. Kf3 Kd5 4. Kf4 Kd6 5. Ke4 (5. Kf5 Kd5) 5... Ke6 6. Kd4 Kd6 7. Kc4 Kc7 8. Kd5 (8. Kc5 Kb7 9. b6 Ka6 10. Kc6) 8... Kb6 9. Kd6 Kb7 10. Kc5 $22 Kc7 11. b6+ Kb7 12. Kb5 { Now let's look at the two most important drawn positions. The first one is an elementary one, but comes up rather regularly. The second one is less likely to occur, but it is very instructive. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Two Pawns to One #2"]
+[Date "2021.07.10"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Two Pawns to One #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/TB9M8B9a"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/1k6/pP6/P1K5/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.10"]
+[UTCTime "20:34:05"]
+
+1... Kb8 (1... Kc8 2. Kc6 Kb8 3. b7 Ka7) (1... Ka8 2. Kc6 Kb8 3. b7 Ka7) 2. Kc6 Kc8 $10 (2... Ka8 { [%csl Gh4] }) *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Two Pawns to One #3"]
+[Date "2021.07.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Two Pawns to One #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/cDNlTEfg"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/2k5/8/8/Pp6/1P6/6K1/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.11"]
+[UTCTime "11:24:43"]
+
+{ The main key squares are c4, d4, e4, e5, e6 and e7. Black can protect them, if he can control the opposition when the enemy king approaches.
+Let's determine the corresponding squares. With white's king at d3, f3 or h3, black's king must occupy d5; the e3- and g3-squares correspond to e5. When the king advances further, black must keep the lateral opposition, maneuvering alomn the e- and the d-files.
+When white's king is on the second rank, black's king must stay next to the d5- and e5-squares - specifically, on d6 or e6. So the first move - as well as all the play that follows - becomes clear: } { [%csl Rh3,Rf3,Rd3,Rd5,Be3,Be5,Bg3][%cal Ga4e8,Ge8e4,Ge4a4,Ga4a8,Ga8e8] }
+1... Kd6! { [%csl Rd3,Rf3,Rh3,Rd5,Be5,Be3,Bg3] } (1... Kc6? { [%csl Be5,Be3,Bg3,Rf3,Rd3,Rd5,Rh3] } 2. Kg3! { [%csl Bg3,Be3,Be5,Rd5,Rd3,Rf3,Rh3] } 2... Kd6 { [%csl Rh3,Rf3,Rd3,Rd5,Be3,Bg3,Be5] } (2... Kc5 3. Kg4 Kd4 4. Kf4) 3. Kf4! Kd5 4. Kf5 $18) 2. Kh3 { [%csl Be5,Be3,Bg3,Rh3,Rf3,Rd3,Rd5] } (2. Kf2 Ke6! 3. Ke2 Kd6! 4. Kd3 Kd5 5. Ke3 Ke5 6. Kf3 Kd5 7. Kf4 Kd4 8. Kf5 Kd5 9. Kf6 Kd6) 2... Kd5 { [%csl Be5,Be3,Bg3,Rf3,Rd3,Rd5,Rh3] } 3. Kg3 { [%csl Bg3,Be3,Be5,Rd5,Rd3,Rf3,Rh3] } 3... Ke5! { [%csl Be5,Be3,Bg3,Rd5,Rd3,Rf3,Rh3] } 4. Kh4 { [%csl Be5,Be3,Bg3,Rd5,Rd3,Rf3,Rh3] } (4. Kf3 Kd5) 4... Kd4! { [%csl Be5,Be3,Bg3,Rf3,Rd3,Rd5,Rh3] } (4... Kd6 5. Kg4 Kc5 6. Kg5) 5. Kh5 { [%csl Be5,Be3,Bg3,Rd5,Rd3,Rf3,Rh3] } 5... Kd5! { [%csl Be5,Be3,Bg3,Rh3,Rf3,Rd3,Rd5] } 6. Kg6 { [%csl Be5,Be3,Bg3,Rd5,Rd3,Rf3,Rh3] } 6... Ke6! { etc. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Multi-Pawn Endgames"]
+[Date "2021.07.11"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Multi-Pawn Endgames"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/xFNyAsfn"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/8/p1k5/1pPp1pp1/1P6/3K4/P5P1/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.11"]
+[UTCTime "12:02:15"]
+
+1. Kd4 f4 2. Ke5 a5! 3. a3 a4 4. Kf5 d4! 5. Ke4 d3 6. Kxd3 Kd5 7. g3! fxg3 8. Ke2 (8. Ke3 g4 9. Ke2) 8... Ke5 (8... g4 9. Kf1) 9. Kf3 Ke6 10. Kxg3 Kf5 { Here is a typical outside passes pawn vs protected passed pawn scenario. The mined squares are g4 and f6. Most often (as here), the stronger side is unable to put is opponent in zugzwang. The only thing to be done then is advance } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Undermining"]
+[Date "2021.07.29"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Undermining"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/xSf8crUb"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/p7/1p6/1P1P1k2/2P1p3/4K1p1/8/8 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.29"]
+[UTCTime "18:05:31"]
+
+{ Sometimes pawns are too strong to be succesfully attacked by the king. In such cases, undermining can be used succesfully - the exchange of a pair or two of pawns, with the aim of weakening the pawn chain. }
+1... Ke5! 2. Ke2 Kd6 3. Ke3 Kc7 4. Ke2 Kb7 5. Ke3 a6 6. bxa6+ Kxa6 7. Ke2 Kb7 (7... b5?? 8. d6 (8. c5?? Kb7 { [%cal Gb5b1,Ge4e1,Gg3g1] }) 8... Kb6 9. cxb5) 8. Ke3 Kc7 9. Ke2 Kd6 10. Ke3 b5 (10... Kc5) 11. cxb5 Kxd5 $19 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: ROOK ENDGAMES"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "ROOK ENDGAMES"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/nxwfiZfn"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[UTCDate "2021.07.12"]
+[UTCTime "13:20:59"]
+
+ *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Rook and Pawn vs. Rook"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B00"]
+[Opening "King's Pawn Game"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Rook and Pawn vs. Rook"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/yjJRRWOS"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[UTCDate "2021.07.12"]
+[UTCTime "13:22:44"]
+
+1. e4 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Pawn on the Seventh Rank #1"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Pawn on the Seventh Rank #1"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/hQE7GzPi"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "4K3/4P1k1/8/8/8/8/r7/5R2 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.12"]
+[UTCTime "13:24:09"]
+
+{ In chess literature this position is usually referred to as "The Lucena Position" even though the Spaniard Lucena did not examine it in his book published in 1497. The first mention of an analogous position was in the book by Salvio (1634), which referred to Scipione of Genoa.
+If white is on move he wins. }
+1. Rg1+ Kh7 (1... Kh6 2. Re1! { Works because the d-file is free. } (2. Rg4! Re2 (2... Kh5 3. Re4 Rb2 4. Kf7 Rf2+ 5. Ke6) 3. Kd7 (3. Kf7 Kh5 4. Rf4)) 2... Kg7 (2... Kg6) 3. Kd7 Ra7+ (3... Rd2+ 4. Ke6) 4. Kc6 Ra6+ 5. Kb7) (1... Kf6 2. Kf8) 2. Rg4! { Building a bridge. } (2. Re1 Kg7 (2... Kg6 3. Kf8) 3. Kd7 Ra7+ 4. Kc6) (2. Rd1 Kg7 3. Kd7 Ra7+ 4. Ke6 Ra6+ 5. Rd6) 2... Rd2 (2... Ra8+ 3. Kf7 Ra7?! 4. Rh4#) 3. Kf7 Rf2+ 4. Ke6 Re2+ 5. Kf6 Rf2+ (5... Re1 6. Rg5 { [%cal Gg5e5] }) 6. Ke5 Re2+ 7. Re4 $18 { It is worth mentioning that white has other winning options such as
+1.Rg1+ Kh7 2.Re1!
+1.Rg1+ Kh7 2.Rd1! (or 1.Rd1)
+Usually the lucena position is given with black's rook on d2. Then building a bridge wins by 1. Rg1+ Kh7 2.Rg4, as does bringing the rook to d1 with 2.Ra1. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Pawn on the Seventh Rank #2"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Pawn on the Seventh Rank #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/f2TzvoOz"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "4K3/4P1k1/8/8/8/8/r7/5R2 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.12"]
+[UTCTime "13:53:55"]
+
+1... Ra8+ (1... Ra3 2. Rg1+ Kf6 3. Kf8 Rh3 4. e8=Q Rh8+) 2. Kd7 Ra7+ 3. Kd6 Ra6+ 4. Kc7 (4. Kc5 Re6) 4... Ra7+ { Let's shift all the pieces except the black rook one file to the left. Then the side checks don't help anymore as the rook is not far enough from the pawn. } 5. Kd8 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: Pawn on the Seventh Rank #3"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "Pawn on the Seventh Rank #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/1WYRN27t"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "3K4/3P1k2/8/8/8/8/r7/4R3 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.12"]
+[UTCTime "13:58:08"]
+
+1... Ra8+ 2. Kc7 Ra7+ 3. Kc8 Ra8+ 4. Kb7 { Hence we can conclude:
+(1) If the pawn is on the seventh rank, multiple winning methods exist. The most important ones are building a bridge for protection from checks along files and a rook maneuver for protection from side checks along ranks. If the attacker has a knight pawn, then only building a bridge wins.
+(2) When the king of the weaker side is cut off from the pawn, the only defensive technique consists in side checks.
+(3) A rook pursuit of the enemy king can only be succesful when the rook and the pawn are seperated at minimum by three lines. As we shall see later, this rule does not only apply to side checks.
+(4) A central or a bishop pawn divides the chessboard into two unequal parts: one is "long," another is "short." The correct positioning of forces for the weaker side is to keep the king on tthe short side, and the rook on the long side. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Pawn on the Sixth Rank #1"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Pawn on the Sixth Rank #1"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/sF6HwkZn"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "r5k1/8/5PK1/8/8/8/8/1R6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.12"]
+[UTCTime "14:20:12"]
+
+{ First let's examine the situation when the king of the weaker side is in front of the pawn.
+
+Black's rook must remain passive, staying on the eighth rank. White wins easily by bringing his rook to h7. }
+1. Rb7 Rc8 2. Rg7+! (2. Rh7 Rc6 3. Ra7 Rc8) 2... Kf8 (2... Kh8 3. Rh7+ Kg8 4. f7+) 3. Rh7 Kg8 (3... Rc6) 4. f7+ Kf8 { It is worth mentioning that if black is on move and his rook stands on a7 black can save the game: 1...Rg7+! 2.Kf5 (2.fg is stalemate) 2.Rg2. Also, white cannot win if his king is placed on the other side of the pawn, at e6: 1.Rb7 Kf8 (there are other possibilities as well) 2.Kf5 Ra1!= } 5. Rh8+ *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Pawn on the Sixth Rank #2"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Pawn on the Sixth Rank #2"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/WZzbplgx"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "r5k1/8/6PK/8/8/8/8/1R6 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.12"]
+[UTCTime "14:36:37"]
+
+1. Rb7 Rc8 2. Rg7+ Kh8! (2... Kf8 3. Kh7 Rc1 4. Rf7+ Ke8 5. Rf4 $18 Rh1+ 6. Kg8) 3. Rh7+ Kg8 $10 { Conclusion: Passive defense works against g- or h-pawns, but loses against all other pawns. } *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Pawn on the Sixth Rank #3"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Pawn on the Sixth Rank #3"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/KpoTQNdn"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "r5k1/1R6/6PK/8/6P1/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.12"]
+[UTCTime "14:41:34"]
+
+1. Rb6! Rf8 (1... Rc8) 2. g5 (2. g7? Rf6+ 3. Rxf6) 2... Ra8 3. g7 Rc8 4. Rf6 Rb8 5. Rf8+ *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Pawn on the Sixth Rank #4"]
+[Date "2021.07.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Pawn on the Sixth Rank #4"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/CTnaRfT6"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "8/4K1k1/4P3/8/8/8/r7/3R4 b - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.12"]
+[UTCTime "14:44:41"]
+
+1... Ra7+ (1... Ra8 2. Rg1+) 2. Rd7 (2. Ke8 Kf6 (2... Ra8+) 3. Re1 Re7+) (2. Kd6 Kf8) 2... Ra8! { The simplest defensive method: black prevents the position with the pawn on the seventh rank. } (2... Ra6?? 3. Ke8+ Kf6 4. e7 Ke6 5. Kf8) (2... Ra1 3. Ke8+ (3. Rd6 Ra8! (3... Ra7+ 4. Ke8 Ra8+ 5. Rd8)) 3... Kf6 4. e7 Ke6! (4... Re1 5. Rd6+) 5. Kf8 (5. Rd8 Ra7 (5... Rh1 6. Rd6+)) (5. Rd3 Ra8+ 6. Rd8 Ra7 (6... Ra6)) 5... Rf1+) (2... Ra2 3. Ke8+ Kf6 4. e7 Ke6 5. Rd1 Ra8+) (2... Ra4 3. Ke8+ Kf6 4. e7 Ke6 5. Kf8 Rf4+ 6. Ke8) 3. Rd8 (3. Kd6+ Kf6 (3... Kf8 $10 4. Rf7+ Ke8 (4... Kg8 5. Rf5 Kg7 (5... Ra7 6. Rc5 Kg7 (6... Ra6+)))) 4. Rf7+ Kg6 $10 (4... Kg5 5. e7) 5. Rc7 Kf6 6. e7 Kf7) (3. Rb7 Kg6 (3... Ra1 4. Kd7 Ra8 5. e7 Kf7) (3... Kg8?? 4. Kf6 Rf8+ (4... Kf8 5. Rf7+ Kg8 6. Rg7+ Kh8 7. Rg5 $18 { [%cal Gg5g8] }) 5. Rf7) (3... Ra6 4. Kd7 Ra8 (4... Kg8) 5. e7 Kg8) 4. Kd6 Kf6 5. e7 Kf7) (3. Rd6! { The most challenging try. } 3... Ra7+? (3... Ra1? 4. Ke8 Kf6 5. e7+ Ke5 6. Rb6 Ra8+ 7. Kf7) (3... Rb8 4. Rd8 Rb7+ 5. Kd6 Rb6+ 6. Kc7 (6. Kd7 Rb7+ 7. Kc6 Re7 8. Kd6 Rb7 (8... Ra7 9. e7) 9. e7)) (3... Kg6 4. Rc6 (4. Rb6 Ra7+) 4... Kg7 (4... Ra7+ 5. Kd8 (5. Ke8 Ra8+ 6. Kd7) 5... Kf6 6. e7+ Kf7)) 4. Ke8 (4. Kd8 Kf8) 4... Ra8+ (4... Kf6 5. e7+ Kg7 6. Re6 (6. Rb6) (6. Rd1 Kg8 (6... Kf6) (6... Ra8+ 7. Kd7 Ra7+ 8. Ke6 Ra6+ 9. Rd6 Ra8 10. Rd8 Ra6+)) (6. Kd8) 6... Rb7 7. Kd8 Rb8+ 8. Kc7) 5. Rd8 Ra1 (5... Ra7) (5... Ra6 6. e7 Kf6 (6... Ra7 7. Rd2 Kf6 8. Kf8)) 6. e7 Ra7 7. Rd1 Kf6 (7... Ra8+ 8. Kd7 Ra7+ 9. Ke6 Ra6+ 10. Rd6 Ra8 11. Rd8 Ra6+ 12. Kd5 Ra5+ 13. Kc4 Ra4+ 14. Kb5) (7... Rb7) (7... Kg8 8. Kd8 Ra8+ 9. Kd7 Ra7+ 10. Ke6 Ra6+ 11. Rd6) 8. Kf8) (3. Rd2) (3. Rd1 Ra7+ (3... Kg6) (3... Rb8) 4. Rd7 (4. Ke8 Kf6 (4... Ra8+)) 4... Ra8 5. Rd6 Kg6 (5... Ra7+ 6. Ke8) 6. Kd7 (6. Rc6 Rb8 7. Ra6) 6... Kf6 (6... Ra7+ 7. Ke8)) 3... Ra7+ 4. Kd6 (4. Ke8 Kf6 5. Rd6 Re7+) 4... Ra6+ (4... Kf6?? 5. Rf8+ Kg7 6. e7) 5. Ke5 Ra5+! (5... Ra7) 6. Rd5 Ra8 (6... Ra7 7. Rd7+) (6... Ra1 7. Kd6 (7. Rd7+ Kf8 8. Kd6) (7. e7 Kf7 8. Rd7 Re1+ 9. Kd6 Re6+)) 7. Rd7+ (7. e7 Kf7 8. Rd8 Ra5+) 7... Kg6! { The reason for the drawn finale was the position of the black rook: it was placed on the long side. Let's shift all the pieces except for the black rook one file to the left. Now that the rook is on the short side, black, as one can see easily, is lost.
+Let's examine another position, not an elementary one, but quite an important one. } (7... Kf8?? 8. Kf6 Kg8 9. Rg7+ Kh8 10. e7 Re8) (7... Kh8 8. Kf6) (7... Kg8 8. Kf6) 8. Kd5 (8. e7 Kf7 9. Kd6 Ra6+ 10. Kc7 Ra7+ 11. Kc6 Ra6+ 12. Kd5) (8. Kd6) 8... Re8 (8... Ra5+ 9. Kc6 Ra6+ 10. Kd5 Ra5+ 11. Kd6 Ra6+ 12. Ke7 Kf5 (12... Ra8) (12... Kg7) 13. Rd6 Ra7+) (8... Kf5) (8... Kf6) 9. Kd6 Kf6 10. e7 Kf7 11. Rc7 Rb8 12. Rc1 Rb6+ 13. Kc7 Re6 14. Kd8 Rd6+ 15. Kc7 Re6 *
+
+
+[Event "Dvoretsky's Endgame Manual 5th Edition: The Pawn on the Sixth Rank #5"]
+[Date "2021.07.27"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "?"]
+[Opening "?"]
+[StudyName "Dvoretsky's Endgame Manual 5th Edition"]
+[ChapterName "The Pawn on the Sixth Rank #5"]
+[ChapterURL "https://lichess.org/study/8pdlxODk/37IAzeKj"]
+[Annotator "https://lichess.org/@/Tiitus0"]
+[FEN "1r6/R3K1k1/4P3/8/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[UTCDate "2021.07.27"]
+[UTCTime "20:16:07"]
+
+1. Kd6+ (1. Ra1 Rb7+ 2. Kd8 (2. Kd6 Rb6+ 3. Kd7 Rb7+ 4. Kc6 Re7 (4... Rb3) (4... Rb2 5. e7 Kf7 6. e8=Q+ (6. Re1 Ke8 7. Kd6 Rb6+ (7... Rd2+ 8. Ke5 (8. Ke6 Re2+ 9. Rxe2))))) 2... Rb8+ 3. Kc7 Rb2 4. Rf1 Re2 5. Kd7 Rd2+ 6. Ke7 Ra2 7. Rg1+ Kh6 8. Kf7 Rf2+ 9. Kg8 (9. Ke7) (9. Ke8 Ra2 10. e7 Re2 11. Rg4 Kh5 12. Rf4 (12. Rd4 Kg6 (12... Rg2) (12... Ra2 13. Kd7 Ra7+ 14. Ke6 Ra6+ 15. Rd6) 13. Kd7 Kf6) (12. Rg7 Kh6 13. Rf7 Rf2) 12... Kg5)) (1. Kd7 Kf6 2. Kd6) 1... Kf6 (1... Kf8 2. Kd7 Re8 { [%cal Ge6e7] } 3. Ra1 Re7+ 4. Kd6 Re8 (4... Rb7 5. Ra8+ Kg7 6. e7) 5. Rf1+ Kg7 6. e7 Ra8 7. Ra1!) 2. Kd7 (2. Rf7+ Kg6 3. Kd7 Rb7+ 4. Kd6 (4. Ke8 Rb8+ 5. Ke7 Rb7+ 6. Kd6) 4... Rxf7) 2... Kg7 (2... Rb1 3. e7 Rd1+ 4. Ke8 Kg7 5. Rd7 Ra1 6. Rd3 (6. Rd4 Kg6 7. Kf8 Rf1+ 8. Kg8 Re1) 6... Kf6 (6... Kg6 7. Kf8 Rf1+ 8. Kg8 Re1 9. Rd6+ Kg5 10. Kf7)) 3. Ke7 (3. e7 Kf7 4. Kc7 Re8 5. Kd6 Kg7 (5... Rh8) (5... Rg8 6. Ra3)) 3... Kg6 (3... Rb1 4. Ra8 Rb7+ 5. Kd6 Rb6+ (5... Rb1 6. e7 Rd1+ 7. Kc5 Rc1+ 8. Kd4) 6. Kd7 Rb7+ 7. Kc6 Rb1 8. e7 Rc1+ 9. Kd5 Rd1+ 10. Kc4 Rc1+ 11. Kd3 Rd1+ 12. Ke2) 4. Ra1 Rb7+ 5. Kd8 (5. Kd6 Rb6+ 6. Kd7 Rb7+ 7. Kc6 Rb8 8. Kc7 Rb2 9. Re1 Rc2+ 10. Kd7 Rd2+ 11. Ke8 Rh2 12. e7 Kf6 13. Re3 Rh1 14. Re2 (14. Kd7 Rd1+ 15. Kc6 Rc1+ 16. Kb5 Rb1+ 17. Kc4 Rb8) 14... Rh3 15. Kd7) 5... Rb8+ (5... Rg7) (5... Kf6 6. e7 Rb8+ 7. Kc7 Re8 8. Kd6 (8. Kd7) 8... Rb8 9. Rf1+ Kg7 10. Kc7 (10. Rf4 Ra8 11. Kd7) 10... Ra8 11. Ra1 Rxa1 12. e8=Q Rc1+ 13. Kd6 Rd1+ 14. Kc5 Rc1+ 15. Kd4 Rd1+ 16. Kc3 Rf1 17. Qe5+ Kf7 18. Qh5+ Kf6 19. Kd4 Rf4+ 20. Ke3 Rf5 21. Qh6+ Ke5 22. Qc6 Rf6 23. Qc5+ Ke6 24. Ke4 Kd7 25. Qd5+ Kc7 26. Ke5 Rc6 27. Qf7+ Kb6 28. Qe7 Kb5 29. Kd5 Rc2 30. Qb7+ Ka4 31. Qa6+ Kb4 32. Qb6+ Kc3 33. Qd4+ Kb3 34. Qd3+ Rc3 35. Qb5+ Kc2 36. Kd4 Ra3 37. Qe2+ Kb3 38. Qd3+ Kb2 39. Qd2+ Kb1 40. Qd1+ Kb2 41. Kc4 Rc3+ 42. Kb4 Rc2 43. Qe1 Rc8 44. Qe5+ Kc1 45. Qg5+ Kb2 46. Qf6+ Kc1 47. Kb3 Kd1 (47... Rb8+ 48. Kc3 Rc8+ 49. Kd3 Rc7 (49... Ra8) (49... Kb1 50. Qb6+ Kc1 51. Qa6 (51. Qd4 Ra8 52. Qg1+ Kb2 53. Qg2+ Ka3) 51... Rd8+ 52. Kc3))) 6. Kc7 Rb2 7. Re1 Rc2+ 8. Kd7 Rd2+ 9. Ke8 Ra2 10. e7 Ra8+ 11. Kd7 Ra7+ 12. Kc6 Ra6+ 13. Kb7 *
+
+

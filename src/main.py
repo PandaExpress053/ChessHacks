@@ -14,7 +14,7 @@ import torch
 # ============================================================
 
 # Relative path: src/main.py → src/model_save/best.pt
-MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/modelArchive/best.pt")
+MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/modelArchive/last.pt")
 
 NUM_PLANES = 18
 NUM_PROMOS = 5   # [None, Q, R, B, N]

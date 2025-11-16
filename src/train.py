@@ -37,7 +37,7 @@ class Config:
         r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\src\model_save"
     )
 
-    EPOCHS = 10
+    EPOCHS = 20
     BATCH_SIZE = 64
     LR = 1e-3
     NUM_WORKERS = 0

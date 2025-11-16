@@ -7,7 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 # Path to your current best supervised model
 # (used both by the engine and as the INIT weights for RL fine-tuning)
-MODEL_PATH = Path(r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\src\model_save\best.pt")
+MODEL_PATH = Path(r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\src\model_save\bestcopy.pt")
 
 # Path to Stockfish binary (adjust if needed)
 STOCKFISH_PATH = Path(r"C:\Users\ethan\Downloads\ChessHacks\e\ChessHacks\src\stockfish-windows-x86-64-avx2.exe")
@@ -26,7 +26,7 @@ TOP_K_MOVES = 10
 MAX_MOVES_PER_GAME = 120
 
 SF_TIME_LIMIT = 0.05        # base; rl_loop will cap at 0.03 for speed
-SELFPLAY_ENGINE_DEPTH = 3   # shallower than your tournament engine depth
+SELFPLAY_ENGINE_DEPTH = 4   # shallower than your tournament engine depth
 POLICY_TEMP_CP = 400.0
 
 # NN / policy config (must match your engine / model)

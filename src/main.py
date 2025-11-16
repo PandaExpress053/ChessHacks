@@ -24,9 +24,11 @@ CP_SCALE = 200.0  # must match training
 MATE_SCORE = 100000.0  # used for checkmate scores
 
 # --- SEARCH TUNABLES (speed/strength knobs) ---
-MAX_SEARCH_DEPTH = 3             # 1 = eval every legal move once, 2 = light lookahead
+MAX_SEARCH_DEPTH = 6             # 1 = eval every legal move once, 2 = light lookahead
 ROOT_TOP_K = 8                   # only these many moves get full-depth search (None = all)
-TIME_LIMIT_SECONDS = 0.18        # per-move soft limit; set to None to disable
+# For debugging, disable time limit so we see full search behavior.
+# For competition, you can set this back to e.g. 0.18.
+TIME_LIMIT_SECONDS = 1        # per-move soft limit; set to None to disable
 CP_SOFTMAX_TEMPERATURE = 400.0   # for converting search scores to probs
 USE_POLICY_ROOT_ORDERING = True  # use NN policy to order root moves
 BONUS_CAPTURE_ORDERING = False   # NOTE: disabled – was causing bad behavior
@@ -175,6 +177,10 @@ class PolicyOnlyEngine:
         self.policy_cache = {}  # zkey -> logits
         self.search_deadline = None
 
+        # Node counter for debugging
+        self.nodes = 0
+        self.time_hit = False
+
         print(f"[ENGINE] Loaded model from {MODEL_PATH}")
 
     # -------------------------------
@@ -279,7 +285,10 @@ class PolicyOnlyEngine:
             return False
         if self.search_deadline is None:
             return False
-        return time.time() > self.search_deadline
+        if time.time() > self.search_deadline:
+            self.time_hit = True
+            return True
+        return False
 
     def _negamax(self, board: chess.Board, depth: int,
                  alpha: float, beta: float) -> float:
@@ -287,6 +296,8 @@ class PolicyOnlyEngine:
         Negamax + alpha–beta pruning.
         Score is always from *side-to-move's* POV at this node.
         """
+        # Count nodes for debugging
+        self.nodes += 1
 
         # Check soft time limit
         if self._time_exceeded():
@@ -337,17 +348,16 @@ class PolicyOnlyEngine:
         """
         Root search with negamax + alpha–beta.
         Returns (best_move, move_prob_dict).
-
-        If max_depth == 1, this degenerates to:
-          for each legal move:
-             push → leaf eval → pop
-          pick best.
         """
         legal_moves = list(board.legal_moves)
         if not legal_moves:
             return None, {}
 
-        root_color = board.turn  # kept for logging/debug if needed
+        root_color = board.turn  # for logging/debug
+
+        # Reset per-move diagnostics
+        self.nodes = 0
+        self.time_hit = False
 
         # Start per-move timer
         if TIME_LIMIT_SECONDS is not None:
@@ -440,12 +450,12 @@ class PolicyOnlyEngine:
                 if self._time_exceeded():
                     break
 
+        if not move_values:
+            return None, {}
+
         # -------------------------
         # Policy-aware bias + blunder guard
         # -------------------------
-
-        if not move_values:
-            return None, {}
 
         # 1) Blunder guard: discard moves far worse than the best search value
         best_value = best_search_value
@@ -454,7 +464,6 @@ class PolicyOnlyEngine:
             if val >= best_value - BLUNDER_MARGIN_CP
         ]
         if not safe_moves:
-            # Should be rare; fall back to all moves
             safe_moves = list(move_values.keys())
 
         # 2) Combine search value with policy logit (policy-aware scoring)
@@ -468,7 +477,6 @@ class PolicyOnlyEngine:
                     policy_term = POLICY_SCORE_LAMBDA * float(policy_logits[idx])
             combined_scores[mv] = v + policy_term
 
-        # Choose best move by combined score
         best_move = max(combined_scores.items(), key=lambda kv: kv[1])[0]
 
         # Debug dump: show root move scores
@@ -477,6 +485,9 @@ class PolicyOnlyEngine:
             print(f"Side to move: {'White' if root_color == chess.WHITE else 'Black'}")
             print(f"FEN: {board.fen()}")
             print(f"CP_IS_WHITE_POV: {CP_IS_WHITE_POV}")
+            print(f"Root legal moves: {len(legal_moves)}")
+            print(f"Nodes searched: {self.nodes}")
+            print(f"Time limit hit: {self.time_hit}")
             print(f"Best pure search value: {best_search_value:.1f}")
             print(f"Blunder margin: {BLUNDER_MARGIN_CP:.1f}")
             print(f"Safe moves count: {len(safe_moves)} / {len(move_values)}")
@@ -560,6 +571,8 @@ class PolicyOnlyEngine:
         self.eval_cache.clear()
         self.policy_cache.clear()
         self.search_deadline = None
+        self.nodes = 0
+        self.time_hit = False
 
 
 # Try to construct the engine once at import

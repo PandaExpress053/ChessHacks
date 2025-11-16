@@ -147,8 +147,16 @@ class PolicyOnlyEngine:
         ).to(self.device)
 
         state = torch.load(MODEL_PATH, map_location="cpu")
-        self.model.load_state_dict(state)
+
+        # If someone accidentally pointed MODEL_PATH at a rich checkpoint (with "model", "optim", etc.),
+        # extract the actual weights.
+        if isinstance(state, dict) and "model" in state and "optim" in state:
+            print("[ENGINE] Detected training checkpoint at MODEL_PATH; extracting 'model' subkey.")
+            state = state["model"]
+
+        self.model.load_state_dict(state, strict=False)
         self.model.eval()
+
 
         # Simple transposition/eval caches
         self.eval_cache = {}    # (zkey, root_color) -> eval

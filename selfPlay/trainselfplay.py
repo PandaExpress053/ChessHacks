@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
 from .config import (
-    MODEL_PATH,       # this is your supervised best.pt
+    MODEL_PATH,       # supervised best.pt
     SELFPLAY_OUT_DIR,
     NUM_PLANES,
     POLICY_DIM,
@@ -16,14 +16,15 @@ from .config import (
 
 from src.model import ResNet20_PolicyDelta
 
-# RL-specific weights live here:
+# RL-specific weights live here (separate from supervised best.pt)
 RL_MODEL_PATH = MODEL_PATH.parent / "best_selfplay.pt"
 
-# Match the supervised trainer config
+# Match the supervised trainer's cp/delta shaping
 CP_CLIP = 1500.0
 CP_NL_CLIP = 800.0
 CP_NL_DIV = 400.0
 
+# Same weighting scheme as before
 W_DELTA = 0.5
 W_CP = 1.0
 W_RESULT = 0.25
@@ -52,7 +53,7 @@ class SelfPlayNPZDataset(Dataset):
         delta_clipped = np.clip(delta_cp, -CP_CLIP, CP_CLIP)
         self.delta_scaled = (delta_clipped / CP_SCALE).astype(np.float32)
 
-        # Result (no discounting here, RL is already close to terminal)
+        # Result (no discounting here; RL positions are close to terminal)
         self.result = result.astype(np.float32)
 
     def __len__(self):
@@ -66,7 +67,7 @@ class SelfPlayNPZDataset(Dataset):
         res = float(self.result[idx])
 
         return (
-            torch.from_numpy(x),              # (18,8,8)
+            torch.from_numpy(x),              # (18, 8, 8)
             torch.tensor(policy_idx),        # ()
             torch.tensor(cp_s, dtype=torch.float32),
             torch.tensor(delta_s, dtype=torch.float32),
@@ -84,7 +85,13 @@ def train_selfplay_model(
 ):
     device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     ds = SelfPlayNPZDataset(npz_path)
-    dl = DataLoader(ds, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True)
+    dl = DataLoader(
+        ds,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=2,
+        pin_memory=True,
+    )
 
     model = ResNet20_PolicyDelta(
         in_planes=NUM_PLANES,
@@ -105,8 +112,9 @@ def train_selfplay_model(
         print(f"[TRAIN] WARNING: Neither {RL_MODEL_PATH} nor {MODEL_PATH} found; training from scratch.")
 
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+
     ce_loss = nn.CrossEntropyLoss()
-    mse_loss = nn.MSELoss()
+    smooth_l1 = nn.SmoothL1Loss(beta=2.0)  # same style as main trainer
 
     model.train()
 
@@ -120,7 +128,8 @@ def train_selfplay_model(
 
         for batch in dl:
             x, policy_idx, cp_target_scaled, delta_target_scaled, result_target = batch
-            x = x.to(device)  # (B,18,8,8)
+
+            x = x.to(device)  # (B, 18, 8, 8)
             policy_idx = policy_idx.to(device)
             cp_target_scaled = cp_target_scaled.to(device)
             delta_target_scaled = delta_target_scaled.to(device)
@@ -138,14 +147,14 @@ def train_selfplay_model(
             # Policy loss: cross-entropy over POLICY_DIM vs policy_idx
             policy_loss = ce_loss(policy_logits, policy_idx)
 
-            # cp loss: MSE in scaled space ([-1,1])
-            cp_loss = mse_loss(cp_scaled_pred, cp_target_scaled)
+            # cp loss: SmoothL1 in scaled space ([-1, 1])
+            cp_loss = smooth_l1(cp_scaled_pred, cp_target_scaled)
 
-            # delta loss: MSE in scaled space
-            delta_loss = mse_loss(delta_scaled_pred, delta_target_scaled)
+            # delta loss: SmoothL1 in scaled space
+            delta_loss = smooth_l1(delta_scaled_pred, delta_target_scaled)
 
-            # result loss: MSE in [-1,1]
-            result_loss = mse_loss(result_pred, result_target)
+            # result loss: SmoothL1 in [-1, 1]
+            result_loss = smooth_l1(result_pred, result_target)
 
             loss = (
                 policy_loss

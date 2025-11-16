@@ -11,6 +11,12 @@ import torch  # OK to keep; used by the engine, and harmless here
 # How often to deliberately play a bad move (to learn to handle blunders)
 BLUNDER_PLAY_PROB = 0.25         # 25% of the time we play a "bad" move
 BLUNDER_CP_DROP_THRESHOLD = 150  # centipawns worse than best to qualify as a blunder
+# Fraction of games where Stockfish helps “steer” winning positions
+SF_GUIDE_GAME_PROB = 0.30  # 30% of games are SF-guided
+
+# Threshold at which SF considers the side to be clearly winning
+WINNING_CP_THRESHOLD = 300.0  # in centipawns (e.g. +300 or -300)
+
 
 from .config import (
     SELFPLAY_OUT_DIR,
@@ -103,7 +109,6 @@ def _would_cause_threefold(board: chess.Board, move: chess.Move) -> bool:
     board.pop()
     return can
 
-
 def play_one_selfplay_game(
     engine: PolicyOnlyEngine,
     sf: StockfishEvaluator,
@@ -122,9 +127,14 @@ def play_one_selfplay_game(
     Play a single self-play game with your NN+alpha-beta engine as the actor
     and Stockfish as the critic on top-K root moves.
 
-    CHECKMATE-ONLY:
-      - If the game does not end in checkmate, this function returns
-        empty lists, so no positions from that game are added to the dataset.
+    Changes in this version:
+      - NO longer discards non-checkmate games. All games are kept, but
+        checkmating / attacking positions are still weighted more via
+        _interesting_weight().
+      - 30% of games are "Stockfish-guided": when SF thinks a side is
+        clearly winning, we more aggressively follow the SF-best move,
+        so games end in checkmate more often.
+      - Still injects blunders and NN exploration for robustness.
 
     Returns lists over plies:
       - planes_list:      list of (18, 8, 8) float32
@@ -150,6 +160,9 @@ def play_one_selfplay_game(
     # for computing result from White POV:
     board_history: list[chess.Board] = []
 
+    # Decide if this game will be SF-guided
+    sf_guided = (random.random() < SF_GUIDE_GAME_PROB)
+
     while not board.is_game_over() and move_count < max_moves:
         board_history.append(board.copy(stack=False))
 
@@ -158,7 +171,6 @@ def play_one_selfplay_game(
             break
 
         # Ask your engine for move + root probs (search-based)
-        # Use a shallower depth for self-play than for tournaments for speed.
         best_move, probs_dict = engine.search_best_move(
             board,
             max_depth=SELFPLAY_ENGINE_DEPTH,
@@ -230,8 +242,9 @@ def play_one_selfplay_game(
         #   - Sometimes deliberately play a *bad* move so the engine learns:
         #       * how to punish blunders
         #       * how to defend after its own blunders
-        #   - When Stockfish says "mate", ALWAYS follow the mating line.
-        #   - Avoid threefold repetition when possible.
+        #   - If SF sees a mating line, ALWAYS follow it.
+        #   - In ~30% of games (sf_guided=True), when clearly winning,
+        #     follow SF-best more often to actually convert to checkmate.
         # ------------------------------------------------------------------
 
         r = random.random()
@@ -243,10 +256,8 @@ def play_one_selfplay_game(
             chosen = best_sf_move
 
         else:
-            # 2) Otherwise, we mix blunders and normal exploration.
-
+            # 2) Blunder mode: 25% of the time (globally), inject a bad move.
             if r < BLUNDER_PLAY_PROB and len(topk_moves) > 1:
-                # --- BLUNDER MODE ---
                 # Find moves that are clearly worse than the best SF move
                 best_cp = float(cp_after[best_sf_idx_local])
                 cp_drop = best_cp - cp_after  # positive if worse than best
@@ -264,47 +275,60 @@ def play_one_selfplay_game(
                     chosen = topk_moves[idx_local]
 
             else:
-                # --- NORMAL MODE ---
+                # 3) Normal / SF-guided mode
                 # Opening: more exploration for uncommon lines
                 if board.fullmove_number <= 12:
                     explore_prob = 0.4  # 60% best, 40% explore
                 else:
                     explore_prob = 0.2  # 80% best, 20% explore
 
-                if random.random() < (1.0 - explore_prob):
-                    # Play engine/search best move (which is often SF-best too)
-                    chosen = best_move
-                else:
-                    # Sample from NN's move distribution for diversity
-                    chosen = random.choices(
-                        legal_moves,
-                        weights=probs.tolist(),
-                        k=1
-                    )[0]
+                # Is this side clearly winning in SF's eyes?
+                clearly_winning = abs(cp_before) >= WINNING_CP_THRESHOLD
 
-        # 3) Avoid causing threefold repetition if we can
-        if _would_cause_threefold(board, chosen):
-            alt_moves = [m for m in legal_moves if m != chosen and not _would_cause_threefold(board, m)]
-            if alt_moves:
-                chosen = random.choice(alt_moves)
+                if sf_guided and clearly_winning:
+                    # In guided games, when clearly winning, be more “clinical”:
+                    # heavily favor SF-best, but still allow a bit of exploration.
+                    if random.random() < 0.85:
+                        chosen = best_sf_move
+                    else:
+                        # small chance to follow NN's best or sample
+                        if random.random() < (1.0 - explore_prob):
+                            chosen = best_move
+                        else:
+                            chosen = random.choices(
+                                legal_moves,
+                                weights=probs.tolist(),
+                                k=1,
+                            )[0]
+                else:
+                    # Non-guided games, or not clearly winning yet:
+                    # same behavior as before (NN + search + exploration).
+                    if random.random() < (1.0 - explore_prob):
+                        # Play engine/search best move
+                        chosen = best_move
+                    else:
+                        # Sample from NN's move distribution for diversity
+                        chosen = random.choices(
+                            legal_moves,
+                            weights=probs.tolist(),
+                            k=1,
+                        )[0]
 
         board.push(chosen)
         move_count += 1
 
     # ------------------------------------------------------------------
-    # CHECKMATE-ONLY FILTER
+    # GAME RESULT (NO LONGER CHECKMATE-ONLY)
     # ------------------------------------------------------------------
 
     # If the game ended by move limit and is not technically game-over,
-    # or it is over but not by checkmate (stalemate, repetition, etc.),
-    # we discard this game entirely.
-    if not board.is_game_over() or not board.is_checkmate():
-        # No usable data from this game
-        print("[SELFPLAY] Game ended without checkmate; discarding positions from this game.")
-        return [], [], [], [], [], [], []
+    # treat it as a draw for labeling purposes.
+    if not board.is_game_over():
+        print("[SELFPLAY] Game ended by move limit; treating as draw.")
+        result_str = "1/2-1/2"
+    else:
+        result_str = board.result()  # e.g. "1-0", "0-1", "1/2-1/2"
 
-    # At the end of the game, we compute result per position.
-    result_str = board.result()  # e.g. "1-0", "0-1", "1/2-1/2"
     if result_str == "1-0":
         z_white = 1.0
     elif result_str == "0-1":
@@ -327,7 +351,6 @@ def play_one_selfplay_game(
         result_list,
         weight_list,
     )
-
 
 def generate_selfplay_npz(
     out_path: Path,

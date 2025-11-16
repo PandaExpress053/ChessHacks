@@ -19,12 +19,12 @@ from .config import (
     POLICY_TEMP_CP,
     CP_SCALE,
 )
-from .stockfish_wrapper import StockfishEvaluator
+from stockfishWRAP import StockfishEvaluator
 
 # Adjust this import to match your project layout:
 # If engine.py sits under something like `submission/engine.py`, use that path.
-from engine import (
-    NNEvalEngine,
+from ..src.main import (
+    NN_Policy,
     board_to_planes,
     move_to_index,
     POLICY_DIM,

@@ -14,7 +14,7 @@ import torch
 # ============================================================
 
 # Relative path: src/main.py → src/model_save/best.pt
-MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/modelArchive/last.pt")
+MODEL_PATH = Path(r"C:/Users/ethan/Downloads/ChessHacks/e/ChessHacks/src/modelArchive/best.pt")
 
 NUM_PLANES = 18
 NUM_PROMOS = 5   # [None, Q, R, B, N]
@@ -24,12 +24,12 @@ CP_SCALE = 200.0  # must match training
 MATE_SCORE = 100000.0  # used for checkmate scores
 
 # --- SEARCH TUNABLES (speed/strength knobs) ---
-MAX_SEARCH_DEPTH = 8             # 1 = eval every legal move once, 2 = light lookahead
-ROOT_TOP_K = 10                   # only these many moves get full-depth search (None = all)
+MAX_SEARCH_DEPTH = 12            # 1 = eval every legal move once, 2 = light lookahead
+ROOT_TOP_K = None                   # only these many moves get full-depth search (None = all)
 # For debugging, disable time limit so we see full search behavior.
 # For competition, you can set this back to e.g. 0.18.
-TIME_LIMIT_SECONDS = 1        # per-move soft limit; set to None to disable
-CP_SOFTMAX_TEMPERATURE = 400.0   # for converting search scores to probs
+TIME_LIMIT_SECONDS = 1       # per-move soft limit; set to None to disable
+CP_SOFTMAX_TEMPERATURE = 200.0   # for converting search scores to probs
 USE_POLICY_ROOT_ORDERING = True  # use NN policy to order root moves
 BONUS_CAPTURE_ORDERING = False   # NOTE: disabled – was causing bad behavior
 
@@ -39,8 +39,8 @@ BONUS_CAPTURE_ORDERING = False   # NOTE: disabled – was causing bad behavior
 CP_IS_WHITE_POV = False
 
 # Policy-bias and blunder guard at root (all learned signals)
-POLICY_SCORE_LAMBDA = 0.05   # λ in score_root = search_value + λ * policy_logit
-BLUNDER_MARGIN_CP = 100    # moves worse than (best_value - margin) are discarded
+POLICY_SCORE_LAMBDA = 0.1   # λ in score_root = search_value + λ * policy_logit
+BLUNDER_MARGIN_CP = 20    # moves worse than (best_value - margin) are discarded
 
 # Print debug info for each move at the root (helpful to see blunders)
 DEBUG_SEARCH = False

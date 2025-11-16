@@ -24,7 +24,7 @@ CP_SCALE = 200.0  # must match training
 MATE_SCORE = 100000.0  # used for checkmate scores
 
 # --- SEARCH TUNABLES (speed/strength knobs) ---
-MAX_SEARCH_DEPTH = 20            # 1 = eval every legal move once, 2 = light lookahead
+MAX_SEARCH_DEPTH = 25            # 1 = eval every legal move once, 2 = light lookahead
 ROOT_TOP_K = 25                   # only these many moves get full-depth search (None = all)
 # For debugging, disable time limit so we see full search behavior.
 # For competition, you can set this back to e.g. 0.18.
